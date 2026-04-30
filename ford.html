@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Servicio de llaves Ford y Lincoln en Austin, TX - Reemplazo, reparación de ignición y más">
+<title>Ford / Lincoln - Austin Car Key & Ignition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="assets/images/logo.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- TRANSLATE BAR -->
+<div class="translate-bar">
+  <div class="container">
+    <span class="lang-es">🌐 Idioma:</span>
+    <span class="lang-en">🌐 Language:</span>
+    <button class="lang-btn active" id="btnEs" onclick="setLang('es')">Español</button>
+    <button class="lang-btn" id="btnEn" onclick="setLang('en')">English</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo.webp" alt="Austin Car Key & Ignition" style="height: 60px; width: auto; background: white; padding: 10px; border-radius: 10px;">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">
+        <span class="lang-es">Inicio</span>
+        <span class="lang-en">Home</span>
+      </a>
+      <div class="dropdown">
+        <div class="nav-item">
+          <span class="lang-es">Servicios</span>
+          <span class="lang-en">Services</span>
+          ▾
+        </div>
+        <div class="dropdown-menu">
+          <a href="honda.html"><span class="dm-icon">🚗</span> Honda / Acura</a>
+          <a href="toyota.html"><span class="dm-icon">🚗</span> Toyota / Lexus</a>
+          <a href="nissan.html"><span class="dm-icon">🚗</span> Nissan / Infiniti</a>
+          <a href="ford.html" class="active"><span class="dm-icon">🚗</span> Ford / Lincoln</a>
+          <a href="dodge.html"><span class="dm-icon">🚗</span> Dodge / Chrysler / Jeep</a>
+          <a href="chevy.html"><span class="dm-icon">🚗</span> Chevrolet / GMC</a>
+          <a href="hyundai.html"><span class="dm-icon">🚗</span> Hyundai / Kia</a>
+        </div>
+      </div>
+      <a href="about.html">
+        <span class="lang-es">Nosotros</span>
+        <span class="lang-en">About</span>
+      </a>
+      <a href="contact.html">
+        <span class="lang-es">Contacto</span>
+        <span class="lang-en">Contact Us</span>
+      </a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html">
+        <span class="lang-es">Reseñas</span>
+        <span class="lang-en">Reviews</span>
+      </a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:5127885155" class="nav-phone">📞 (512) 788-5155</a>
+      <a href="tel:5127885155" class="btn btn-accent">
+        <span class="lang-es">Llamar Ahora</span>
+        <span class="lang-en">Call Now</span>
+      </a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" onclick="closeMobileIfBg(event)">
+  <div class="mobile-panel">
+    <button class="close-btn" onclick="toggleMobile()">✕</button>
+    <br>
+    <a href="index.html" onclick="toggleMobile()"><span class="lang-es">🏠 Inicio</span><span class="lang-en">🏠 Home</span></a>
+    <div class="mob-nav-item" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">
+      <span class="lang-es">🔧 Servicios ▾</span>
+      <span class="lang-en">🔧 Services ▾</span>
+    </div>
+    <div style="display:none">
+      <a class="mob-sub" href="honda.html" onclick="toggleMobile()">Honda / Acura</a>
+      <a class="mob-sub" href="toyota.html" onclick="toggleMobile()">Toyota / Lexus</a>
+      <a class="mob-sub" href="nissan.html" onclick="toggleMobile()">Nissan / Infiniti</a>
+      <a class="mob-sub" href="ford.html" onclick="toggleMobile()">Ford / Lincoln</a>
+      <a class="mob-sub" href="dodge.html" onclick="toggleMobile()">Dodge / Chrysler / Jeep</a>
+      <a class="mob-sub" href="chevy.html" onclick="toggleMobile()">Chevrolet / GMC</a>
+      <a class="mob-sub" href="hyundai.html" onclick="toggleMobile()">Hyundai / Kia</a>
+    </div>
+    <a href="about.html" onclick="toggleMobile()"><span class="lang-es">ℹ️ Nosotros</span><span class="lang-en">ℹ️ About</span></a>
+    <a href="contact.html" onclick="toggleMobile()"><span class="lang-es">📞 Contacto</span><span class="lang-en">📞 Contact Us</span></a>
+    <a href="faq.html" onclick="toggleMobile()">❓ FAQ</a>
+    <a href="reviews.html" onclick="toggleMobile()"><span class="lang-es">⭐ Reseñas</span><span class="lang-en">⭐ Reviews</span></a>
+    <br>
+    <a href="tel:5127885155" class="btn btn-accent" style="width:100%;justify-content:center;margin-top:10px;">📞 (512) 788-5155</a>
+  </div>
+</div>
+
+<main>
+  <section style="background:var(--primary);padding:48px 0 32px;">
+    <div class="container">
+      <div class="badge badge-accent" style="margin-bottom:12px;"><span class="lang-es">Servicios por Marca</span><span class="lang-en">Services by Brand</span></div>
+      <h1 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);">🚗 Ford / Lincoln</h1>
+      <p style="color:rgba(255,255,255,0.8);margin-top:8px;"><span class="lang-es">Servicio móvil de llaves Ford y Lincoln en Austin, TX</span><span class="lang-en">Mobile Ford and Lincoln key service in Austin, TX</span></p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="margin-bottom:24px;">
+        <div>
+          <div class="warning-box" style="margin-bottom:16px;">
+            <div class="wb-icon">⚠️</div>
+            <div>
+              <strong><span class="lang-es">Antes de Que se Bloquee por Completo</span><span class="lang-en">Before It Locks Completely</span></strong>
+              <p style="font-size:14px;color:var(--text-light);margin-top:4px;">
+                <span class="lang-es">Si tu llave está dura o difícil de girar — no lo ignores. Es señal clara de desgaste en la ignición.</span>
+                <span class="lang-en">If your key is stiff or hard to turn — don't ignore it. It's a clear sign of ignition wear.</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Por Qué Fallan las Igniciones Ford</span><span class="lang-en">Why Ford Ignitions Fail</span></h3>
+            <ul class="step-list">
+              <li><div class="step-num">1</div><span class="lang-es">La ignición se desgasta internamente</span><span class="lang-en">Ignition wears internally</span></li>
+              <li><div class="step-num">2</div><span class="lang-es">La llave se debilita con el uso</span><span class="lang-en">Key weakens with use</span></li>
+              <li><div class="step-num">3</div><span class="lang-es">La alineación cambia</span><span class="lang-en">Alignment changes</span></li>
+              <li><div class="step-num">4</div><span class="lang-es">La llave se pone dura</span><span class="lang-en">Key becomes stiff</span></li>
+              <li><div class="step-num">5</div><span class="lang-es">Eventualmente deja de girar</span><span class="lang-en">Eventually stops turning</span></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:16px;" style="background:#fff5f5;border:1px solid #fcc;">
+            <h3 style="margin-bottom:12px;font-size:17px;">❗ <span class="lang-es">Error Muy Común</span><span class="lang-en">Very Common Mistake</span></h3>
+            <p style="font-size:14px;color:var(--text-light);margin-bottom:10px;">
+              <span class="lang-es">Cuando la ignición se traba, muchas personas fuerzan la llave, intentan taladrar o arreglarlo sin experiencia.</span>
+              <span class="lang-en">When the ignition jams, many people force the key, try to drill, or fix it without experience.</span>
+            </p>
+            <div style="background:#fff0f0;border-radius:8px;padding:12px;">
+              <p style="font-size:13px;color:#c0392b;font-weight:600;">
+                <span class="lang-es">⚠️ Esto puede causar daño total y necesidad de reemplazo completo. No la fuerces.</span>
+                <span class="lang-en">⚠️ This can cause total damage and need for complete replacement. Don't force it.</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:12px;font-size:17px;">🚗 <span class="lang-es">Servicios Ford / Lincoln</span><span class="lang-en">Ford / Lincoln Services</span></h3>
+            <ul class="check-list">
+              <li><span class="lang-es">Reparación de ignición Ford</span><span class="lang-en">Ford ignition repair</span></li>
+              <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+              <li><span class="lang-es">Copias de llaves</span><span class="lang-en">Key copies</span></li>
+              <li><span class="lang-es">Programación de llaves con chip</span><span class="lang-en">Chip key programming</span></li>
+              <li><span class="lang-es">Extracción de llaves rotas</span><span class="lang-en">Broken key extraction</span></li>
+              <li><span class="lang-es">Smart key Lincoln</span><span class="lang-en">Lincoln smart key</span></li>
+              <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="case-card"><div class="loc">📍 Austin</div><p class="lang-es">Ford Focus — llave no giraba.</p><p class="lang-en">Ford Focus — key wouldn't turn.</p><p class="result lang-es">✅ Reparación de ignición en el lugar.</p><p class="result lang-en">✅ Ignition repair on the spot.</p></div>
+        <div class="case-card"><div class="loc">📍 North Austin</div><p class="lang-es">F-150 con llave rota dentro.</p><p class="lang-en">F-150 with broken key inside.</p><p class="result lang-es">✅ Sacamos la pieza, reparamos e hicimos nueva llave.</p><p class="result lang-en">✅ Extracted the piece, repaired and made new key.</p></div>
+        <div class="case-card"><div class="loc">📍 South Austin</div><p class="lang-es">Llave funcionaba a veces — ya estaba dañando la ignición.</p><p class="lang-en">Key worked sometimes — was already damaging the ignition.</p><p class="result lang-es">✅ Solucionado antes de que fallara completamente.</p><p class="result lang-en">✅ Solved before it failed completely.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section" style="background:var(--bg2);">
+    <div class="container">
+      <div class="section-heading center text-center">
+        <h2><span class="lang-es">Preguntas Frecuentes</span><span class="lang-en">Frequently Asked Questions</span></h2>
+        <p style="color:var(--text-light);"><span class="lang-es">Respuestas sobre llaves Ford y Lincoln</span><span class="lang-en">Answers about Ford and Lincoln keys</span></p>
+      </div>
+      <div class="container" style="max-width:780px;">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-es">¿Por qué mi llave Ford no gira?</span>
+            <span class="lang-en">Why won't my Ford key turn?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+            <div class="faq-a">
+              <span class="lang-es">Generalmente por desgaste de la llave. Con el tiempo la llave pierde su forma y ya no coincide correctamente con la ignición. En muchos casos se puede reparar sin reemplazar la ignición.</span>
+              <span class="lang-en">Generally due to key wear. Over time the key loses its shape and no longer matches the ignition correctly. In many cases it can be repaired without replacing the ignition.</span>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-es">¿Puedo forzar una llave atorada?</span>
+            <span class="lang-en">Can I force a stuck key?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-a">
+            <span class="lang-es">¡No! Forzar puede causar daño permanente a la ignición y requerir reemplazo completo. Si está atorada, llama a un profesional.</span>
+            <span class="lang-en">No! Forcing can cause permanent damage to the ignition and require complete replacement. If it's stuck, call a professional.</span>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-es">¿Cuánto tiempo tomará reparar la ignición?</span>
+            <span class="lang-en">How long will ignition repair take?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-a">
+            <span class="lang-es">Normalmente 30-60 minutos en el lugar, dependiendo del daño. No necesitas llevar el carro a ninguna parte.</span>
+            <span class="lang-en">Usually 30-60 minutes on the spot, depending on the damage. You don't need to take the car anywhere.</span>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-es">¿Trabajan con Lincoln smart keys?</span>
+            <span class="lang-en">Do you work with Lincoln smart keys?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-a">
+            <span class="lang-es">Sí, programamos smart keys de Lincoln, reemplazamos baterías y hacemos copias de todos los modelos.</span>
+            <span class="lang-en">Yes, we program Lincoln smart keys, replace batteries and make copies of all models.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading center text-center">
+        <h2><span class="lang-es">Contacto para Servicios Ford</span><span class="lang-en">Contact for Ford Services</span></h2>
+        <p style="color:var(--text-light);"><span class="lang-es">Llámanos ahora para servicio inmediato en Austin</span><span class="lang-en">Call us now for immediate service in Austin</span></p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3 style="margin-bottom:24px;"><span class="lang-es">¿Cómo Contactarnos?</span><span class="lang-en">How to Contact Us?</span></h3>
+          <div class="contact-method">
+            <div class="cm-icon">📞</div>
+            <div>
+              <div style="font-weight:700;font-size:16px;"><span class="lang-es">Llamar Ahora</span><span class="lang-en">Call Now</span></div>
+              <a href="tel:5127885155" style="color:var(--primary);font-size:20px;font-weight:700;">(512) 788-5155</a>
+              <p style="font-size:13px;color:var(--text-light);margin-top:2px;"><span class="lang-es">Servicio 24/7 para emergencias</span><span class="lang-en">24/7 service for emergencies</span></p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="cm-icon">📍</div>
+            <div>
+              <div style="font-weight:700;font-size:16px;"><span class="lang-es">Áreas de Servicio</span><span class="lang-en">Service Areas</span></div>
+              <p style="font-size:14px;color:var(--text-light);">Austin, North Austin, South Austin, Round Rock, Cedar Park</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="cm-icon">⏱️</div>
+            <div>
+              <div style="font-weight:700;font-size:16px;"><span class="lang-es">Tiempo de Llegada</span><span class="lang-en">Arrival Time</span></div>
+              <p style="font-size:14px;color:var(--text-light);"><span class="lang-es">20–40 minutos normalmente</span><span class="lang-en">20–40 minutes normally</span></p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="cta-banner">
+            <h2><span class="lang-es">¿Problema con tu Ford?</span><span class="lang-en">Ford Problem?</span></h2>
+            <p><span class="lang-es">Si tu Ford no arranca o la llave no funciona — no esperes. Llama ahora y vamos a tu ubicación.</span><span class="lang-en">If your Ford won't start or the key doesn't work — don't wait. Call now and we'll come to your location.</span></p>
+            <a href="tel:5127885155" class="btn" style="background:#fff;color:var(--accent);font-size:18px;padding:16px 36px;">📞 (512) 788-5155</a>
+          </div>
+          <div style="margin-top:20px;">
+            <div class="card">
+              <h3 style="margin-bottom:10px;font-size:16px;"><span class="lang-es">Servicios Especializados Ford</span><span class="lang-en">Specialized Ford Services</span></h3>
+              <div>
+                <span class="tag">Ignition Repair</span>
+                <span class="tag">Key Extraction</span>
+                <span class="tag">Smart Key Programming</span>
+                <span class="tag">Lockout Service</span>
+                <span class="tag">Chip Key Programming</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FLOATING PHONE -->
+<div class="float-phone">
+  <a href="tel:5127885155">📞 (512) 788-5155</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <img src="assets/images/logo.webp" alt="Austin Car Key & Ignition" style="height: 50px; width: auto; background: white; padding: 10px; border-radius: 10px;">
+        </div>
+        <p style="font-size:14px;line-height:1.7;"><span class="lang-es">Servicio móvil de llaves de carro y reparación de ignición en Austin, TX. Sin grúa. Sin concesionario.</span><span class="lang-en">Mobile car key service and ignition repair in Austin, TX. No tow truck. No dealership.</span></p>
+        <p style="margin-top:12px;font-size:14px;">📍 1803 W 35th St STE D, Austin, TX 78703</p>
+        <p style="margin-top:4px;font-size:14px;">📞 <a href="tel:5127885155">(512) 788-5155</a></p>
+      </div>
+      <div>
+        <h4><span class="lang-es">Servicios</span><span class="lang-en">Services</span></h4>
+        <ul style="list-style:none;line-height:2.2;">
+          <li><a href="honda.html" style="cursor:pointer;">Honda / Acura</a></li>
+          <li><a href="toyota.html" style="cursor:pointer;">Toyota / Lexus</a></li>
+          <li><a href="nissan.html" style="cursor:pointer;">Nissan / Infiniti</a></li>
+          <li><a href="ford.html" style="cursor:pointer;">Ford / Lincoln</a></li>
+          <li><a href="dodge.html" style="cursor:pointer;">Dodge / Chrysler / Jeep</a></li>
+          <li><a href="chevy.html" style="cursor:pointer;">Chevrolet / GMC</a></li>
+          <li><a href="hyundai.html" style="cursor:pointer;">Hyundai / Kia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-es">Navegación</span><span class="lang-en">Navigation</span></h4>
+        <ul style="list-style:none;line-height:2.4;">
+          <li><a href="index.html" style="cursor:pointer;"><span class="lang-es">Inicio</span><span class="lang-en">Home</span></a></li>
+          <li><a href="about.html" style="cursor:pointer;"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a></li>
+          <li><a href="contact.html" style="cursor:pointer;"><span class="lang-es">Contacto</span><span class="lang-en">Contact Us</span></a></li>
+          <li><a href="faq.html" style="cursor:pointer;">FAQ</a></li>
+          <li><a href="reviews.html" style="cursor:pointer;"><span class="lang-es">Reseñas</span><span class="lang-en">Reviews</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-es">Áreas de Servicio</span><span class="lang-en">Service Areas</span></h4>
+        <ul style="list-style:none;line-height:2.2;font-size:14px;">
+          <li>📍 Austin</li>
+          <li>📍 North / South / East / West Austin</li>
+          <li>📍 Round Rock</li>
+          <li>📍 Cedar Park</li>
+          <li>📍 Pflugerville</li>
+          <li>📍 Georgetown</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Austin Car Key & Ignition. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></span>
+      <a href="http://austincarkeyandignition.com/">austincarkeyandignition.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

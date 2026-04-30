@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contacta a Austin Car Key & Ignition - Servicio móvil de llaves de carro y reparación de ignición en Austin, TX">
+<title>Contacto - Austin Car Key & Ignition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="assets/images/logo.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- TRANSLATE BAR -->
+<div class="translate-bar">
+  <div class="container">
+    <span class="lang-es">🌐 Idioma:</span>
+    <span class="lang-en">🌐 Language:</span>
+    <button class="lang-btn active" id="btnEs" onclick="setLang('es')">Español</button>
+    <button class="lang-btn" id="btnEn" onclick="setLang('en')">English</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo.webp" alt="Austin Car Key & Ignition" style="height: 60px; width: auto; background: white; padding: 10px; border-radius: 10px;">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">
+        <span class="lang-es">Inicio</span>
+        <span class="lang-en">Home</span>
+      </a>
+      <div class="dropdown">
+        <div class="nav-item">
+          <span class="lang-es">Servicios</span>
+          <span class="lang-en">Services</span>
+          ▾
+        </div>
+        <div class="dropdown-menu">
+          <a href="brands.html#honda"><span class="dm-icon">🚗</span> Honda / Acura</a>
+          <a href="brands.html#toyota"><span class="dm-icon">🚗</span> Toyota / Lexus</a>
+          <a href="brands.html#nissan"><span class="dm-icon">🚗</span> Nissan / Infiniti</a>
+          <a href="brands.html#ford"><span class="dm-icon">🚗</span> Ford / Lincoln</a>
+          <a href="brands.html#dodge"><span class="dm-icon">🚗</span> Dodge / Chrysler / Jeep</a>
+          <a href="brands.html#chevy"><span class="dm-icon">🚗</span> Chevrolet / GMC</a>
+          <a href="brands.html#hyundai"><span class="dm-icon">🚗</span> Hyundai / Kia</a>
+        </div>
+      </div>
+      <a href="about.html">
+        <span class="lang-es">Nosotros</span>
+        <span class="lang-en">About</span>
+      </a>
+      <a href="contact.html" class="active">
+        <span class="lang-es">Contacto</span>
+        <span class="lang-en">Contact Us</span>
+      </a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html">
+        <span class="lang-es">Reseñas</span>
+        <span class="lang-en">Reviews</span>
+      </a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:5127885155" class="nav-phone">📞 (512) 788-5155</a>
+      <a href="tel:5127885155" class="btn btn-accent">
+        <span class="lang-es">Llamar Ahora</span>
+        <span class="lang-en">Call Now</span>
+      </a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" onclick="closeMobileIfBg(event)">
+  <div class="mobile-panel">
+    <button class="close-btn" onclick="toggleMobile()">✕</button>
+    <br>
+    <a href="index.html" onclick="toggleMobile()"><span class="lang-es">🏠 Inicio</span><span class="lang-en">🏠 Home</span></a>
+    <div class="mob-nav-item" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">
+      <span class="lang-es">🔧 Servicios ▾</span>
+      <span class="lang-en">🔧 Services ▾</span>
+    </div>
+    <div style="display:none">
+      <a class="mob-sub" href="brands.html#honda" onclick="toggleMobile()">Honda / Acura</a>
+      <a class="mob-sub" href="brands.html#toyota" onclick="toggleMobile()">Toyota / Lexus</a>
+      <a class="mob-sub" href="brands.html#nissan" onclick="toggleMobile()">Nissan / Infiniti</a>
+      <a class="mob-sub" href="brands.html#ford" onclick="toggleMobile()">Ford / Lincoln</a>
+      <a class="mob-sub" href="brands.html#dodge" onclick="toggleMobile()">Dodge / Chrysler / Jeep</a>
+      <a class="mob-sub" href="brands.html#chevy" onclick="toggleMobile()">Chevrolet / GMC</a>
+      <a class="mob-sub" href="brands.html#hyundai" onclick="toggleMobile()">Hyundai / Kia</a>
+    </div>
+    <a href="about.html" onclick="toggleMobile()"><span class="lang-es">ℹ️ Nosotros</span><span class="lang-en">ℹ️ About</span></a>
+    <a href="contact.html" onclick="toggleMobile()"><span class="lang-es">📞 Contacto</span><span class="lang-en">📞 Contact Us</span></a>
+    <a href="faq.html" onclick="toggleMobile()">❓ FAQ</a>
+    <a href="reviews.html" onclick="toggleMobile()"><span class="lang-es">⭐ Reseñas</span><span class="lang-en">⭐ Reviews</span></a>
+    <br>
+    <a href="tel:5127885155" class="btn btn-accent" style="width:100%;justify-content:center;margin-top:10px;">📞 (512) 788-5155</a>
+  </div>
+</div>
+
+<main>
+  <section style="background:var(--primary);padding:48px 0 32px;">
+    <div class="container">
+      <h1 style="color:#fff;"><span class="lang-es">Contáctanos</span><span class="lang-en">Contact Us</span></h1>
+      <p style="color:rgba(255,255,255,0.8);margin-top:8px;"><span class="lang-es">Estamos listos para ayudarte. Llegamos en 20–40 minutos.</span><span class="lang-en">We're ready to help you. We arrive in 20–40 minutes.</span></p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <h2 style="margin-bottom:24px;"><span class="lang-es">¿Cómo Contactarnos?</span><span class="lang-en">How to Contact Us?</span></h2>
+          <div class="contact-method">
+            <div class="cm-icon">📞</div>
+            <div>
+              <div style="font-weight:700;font-size:16px;"><span class="lang-es">Llamar Ahora</span><span class="lang-en">Call Now</span></div>
+              <a href="tel:5127885155" style="color:var(--primary);font-size:20px;font-weight:700;">(512) 788-5155</a>
+              <p style="font-size:13px;color:var(--text-light);margin-top:2px;"><span class="lang-es">La forma más rápida de ayudarte</span><span class="lang-en">The fastest way to help you</span></p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="cm-icon">📍</div>
+            <div>
+              <div style="font-weight:700;font-size:16px;"><span class="lang-es">Dirección</span><span class="lang-en">Address</span></div>
+              <p style="font-size:14px;color:var(--text-light);">1803 W 35th St STE D, Austin, TX 78703</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="cm-icon">🌐</div>
+            <div>
+              <div style="font-weight:700;font-size:16px;"><span class="lang-es">Sitio Web</span><span class="lang-en">Website</span></div>
+              <a href="http://austincarkeyandignition.com/" style="color:var(--primary-light);font-size:14px;">austincarkeyandignition.com</a>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="cm-icon">⏱️</div>
+            <div>
+              <div style="font-weight:700;font-size:16px;"><span class="lang-es">Tiempo de Llegada</span><span class="lang-en">Arrival Time</span></div>
+              <p style="font-size:14px;color:var(--text-light);"><span class="lang-es">20–40 minutos normalmente</span><span class="lang-en">20–40 minutes normally</span></p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="cta-banner">
+            <h2><span class="lang-es">¿Emergencia Ahora?</span><span class="lang-en">Emergency Now?</span></h2>
+            <p><span class="lang-es">Si tu carro no arranca o estás varado — no esperes. Llama ahora y vamos a tu ubicación.</span><span class="lang-en">If your car won't start or you're stranded — don't wait. Call now and we'll come to your location.</span></p>
+            <a href="tel:5127885155" class="btn" style="background:#fff;color:var(--accent);font-size:18px;padding:16px 36px;">📞 (512) 788-5155</a>
+          </div>
+          <div style="margin-top:20px;">
+            <div class="card">
+              <h3 style="margin-bottom:10px;font-size:16px;"><span class="lang-es">Áreas de Servicio</span><span class="lang-en">Service Areas</span></h3>
+              <div>
+                <span class="tag">Austin</span>
+                <span class="tag">North Austin</span>
+                <span class="tag">South Austin</span>
+                <span class="tag">East Austin</span>
+                <span class="tag">West Austin</span>
+                <span class="tag">Round Rock</span>
+                <span class="tag">Cedar Park</span>
+                <span class="tag">Pflugerville</span>
+                <span class="tag">Georgetown</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FLOATING PHONE -->
+<div class="float-phone">
+  <a href="tel:5127885155">📞 (512) 788-5155</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <img src="assets/images/logo.webp" alt="Austin Car Key & Ignition" style="height: 50px; width: auto; background: white; padding: 10px; border-radius: 10px;">
+        </div>
+        <p style="font-size:14px;line-height:1.7;"><span class="lang-es">Servicio móvil de llaves de carro y reparación de ignición en Austin, TX. Sin grúa. Sin concesionario.</span><span class="lang-en">Mobile car key service and ignition repair in Austin, TX. No tow truck. No dealership.</span></p>
+        <p style="margin-top:12px;font-size:14px;">📍 1803 W 35th St STE D, Austin, TX 78703</p>
+        <p style="margin-top:4px;font-size:14px;">📞 <a href="tel:5127885155">(512) 788-5155</a></p>
+      </div>
+      <div>
+        <h4><span class="lang-es">Servicios</span><span class="lang-en">Services</span></h4>
+        <ul style="list-style:none;line-height:2.2;">
+          <li><a href="brands.html#honda" style="cursor:pointer;">Honda / Acura</a></li>
+          <li><a href="brands.html#toyota" style="cursor:pointer;">Toyota / Lexus</a></li>
+          <li><a href="brands.html#nissan" style="cursor:pointer;">Nissan / Infiniti</a></li>
+          <li><a href="brands.html#ford" style="cursor:pointer;">Ford / Lincoln</a></li>
+          <li><a href="brands.html#dodge" style="cursor:pointer;">Dodge / Chrysler / Jeep</a></li>
+          <li><a href="brands.html#chevy" style="cursor:pointer;">Chevrolet / GMC</a></li>
+          <li><a href="brands.html#hyundai" style="cursor:pointer;">Hyundai / Kia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-es">Navegación</span><span class="lang-en">Navigation</span></h4>
+        <ul style="list-style:none;line-height:2.4;">
+          <li><a href="index.html" style="cursor:pointer;"><span class="lang-es">Inicio</span><span class="lang-en">Home</span></a></li>
+          <li><a href="about.html" style="cursor:pointer;"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a></li>
+          <li><a href="contact.html" style="cursor:pointer;"><span class="lang-es">Contacto</span><span class="lang-en">Contact Us</span></a></li>
+          <li><a href="faq.html" style="cursor:pointer;">FAQ</a></li>
+          <li><a href="reviews.html" style="cursor:pointer;"><span class="lang-es">Reseñas</span><span class="lang-en">Reviews</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-es">Áreas de Servicio</span><span class="lang-en">Service Areas</span></h4>
+        <ul style="list-style:none;line-height:2.2;font-size:14px;">
+          <li>📍 Austin</li>
+          <li>📍 North / South / East / West Austin</li>
+          <li>📍 Round Rock</li>
+          <li>📍 Cedar Park</li>
+          <li>📍 Pflugerville</li>
+          <li>📍 Georgetown</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Austin Car Key & Ignition. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></span>
+      <a href="http://austincarkeyandignition.com/">austincarkeyandignition.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

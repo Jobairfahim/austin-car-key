@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Servicio de llaves Honda y Acura en Austin, TX - Reemplazo, reparación de ignición y programación">
+<title>Honda / Acura - Austin Car Key & Ignition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="assets/images/logo.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- TRANSLATE BAR -->
+<div class="translate-bar">
+  <div class="container">
+    <span class="lang-es">🌐 Idioma:</span>
+    <span class="lang-en">🌐 Language:</span>
+    <button class="lang-btn active" id="btnEs" onclick="setLang('es')">Español</button>
+    <button class="lang-btn" id="btnEn" onclick="setLang('en')">English</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo.webp" alt="Austin Car Key & Ignition" style="height: 60px; width: auto; background: white; padding: 10px; border-radius: 10px;">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">
+        <span class="lang-es">Inicio</span>
+        <span class="lang-en">Home</span>
+      </a>
+      <div class="dropdown">
+        <div class="nav-item">
+          <span class="lang-es">Servicios</span>
+          <span class="lang-en">Services</span>
+          ▾
+        </div>
+        <div class="dropdown-menu">
+          <a href="honda.html" class="active"><span class="dm-icon">🚗</span> Honda / Acura</a>
+          <a href="toyota.html"><span class="dm-icon">🚗</span> Toyota / Lexus</a>
+          <a href="nissan.html"><span class="dm-icon">🚗</span> Nissan / Infiniti</a>
+          <a href="ford.html"><span class="dm-icon">🚗</span> Ford / Lincoln</a>
+          <a href="dodge.html"><span class="dm-icon">🚗</span> Dodge / Chrysler / Jeep</a>
+          <a href="chevy.html"><span class="dm-icon">🚗</span> Chevrolet / GMC</a>
+          <a href="hyundai.html"><span class="dm-icon">🚗</span> Hyundai / Kia</a>
+        </div>
+      </div>
+      <a href="about.html">
+        <span class="lang-es">Nosotros</span>
+        <span class="lang-en">About</span>
+      </a>
+      <a href="contact.html">
+        <span class="lang-es">Contacto</span>
+        <span class="lang-en">Contact Us</span>
+      </a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html">
+        <span class="lang-es">Reseñas</span>
+        <span class="lang-en">Reviews</span>
+      </a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:5127885155" class="nav-phone">📞 (512) 788-5155</a>
+      <a href="tel:5127885155" class="btn btn-accent">
+        <span class="lang-es">Llamar Ahora</span>
+        <span class="lang-en">Call Now</span>
+      </a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" onclick="closeMobileIfBg(event)">
+  <div class="mobile-panel">
+    <button class="close-btn" onclick="toggleMobile()">✕</button>
+    <br>
+    <a href="index.html" onclick="toggleMobile()"><span class="lang-es">🏠 Inicio</span><span class="lang-en">🏠 Home</span></a>
+    <div class="mob-nav-item" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">
+      <span class="lang-es">🔧 Servicios ▾</span>
+      <span class="lang-en">🔧 Services ▾</span>
+    </div>
+    <div style="display:none">
+      <a class="mob-sub" href="honda.html" onclick="toggleMobile()">Honda / Acura</a>
+      <a class="mob-sub" href="toyota.html" onclick="toggleMobile()">Toyota / Lexus</a>
+      <a class="mob-sub" href="nissan.html" onclick="toggleMobile()">Nissan / Infiniti</a>
+      <a class="mob-sub" href="ford.html" onclick="toggleMobile()">Ford / Lincoln</a>
+      <a class="mob-sub" href="dodge.html" onclick="toggleMobile()">Dodge / Chrysler / Jeep</a>
+      <a class="mob-sub" href="chevy.html" onclick="toggleMobile()">Chevrolet / GMC</a>
+      <a class="mob-sub" href="hyundai.html" onclick="toggleMobile()">Hyundai / Kia</a>
+    </div>
+    <a href="about.html" onclick="toggleMobile()"><span class="lang-es">ℹ️ Nosotros</span><span class="lang-en">ℹ️ About</span></a>
+    <a href="contact.html" onclick="toggleMobile()"><span class="lang-es">📞 Contacto</span><span class="lang-en">📞 Contact Us</span></a>
+    <a href="faq.html" onclick="toggleMobile()">❓ FAQ</a>
+    <a href="reviews.html" onclick="toggleMobile()"><span class="lang-es">⭐ Reseñas</span><span class="lang-en">⭐ Reviews</span></a>
+    <br>
+    <a href="tel:5127885155" class="btn btn-accent" style="width:100%;justify-content:center;margin-top:10px;">📞 (512) 788-5155</a>
+  </div>
+</div>
+
+<main>
+  <section style="background:var(--primary);padding:48px 0 32px;">
+    <div class="container">
+      <h1 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);">🚗 HONDA / ACURA</h1>
+      <h2 style="color:rgba(255,255,255,0.9);margin-top:8px;font-size:1.2rem;">Austin Car Key & Ignition</h2>
+      <p style="color:rgba(255,255,255,0.8);margin-top:8px;"><span class="lang-es">Servicio móvil de llaves Honda y Acura en Austin, TX</span><span class="lang-en">Mobile Honda and Acura key service in Austin, TX</span></p>
+      <div style="text-align:center;margin-top:24px;">
+        <a href="tel:5127885155" class="btn" style="background:#fff;color:var(--accent);font-size:18px;padding:16px 32px;">📞 (512) 788-5155</a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:24px;"><span class="lang-es">¿La Llave de Honda No Gira? Reparación de Ignición y Llaves en Austin, TX</span><span class="lang-en">Honda Key Won't Turn? Ignition and Key Repair in Austin, TX</span></h2>
+      
+      <div style="text-align:center;margin-bottom:32px;">
+        <p style="font-size:18px;color:var(--text-light);"><span class="lang-es">¿La llave no gira? ¿La ignición está dura o atorada? ¿El carro no arranca?</span><span class="lang-en">Key won't turn? Ignition stiff or stuck? Car won't start?</span></p>
+      </div>
+
+      <div class="card" style="margin-bottom:32px;">
+        <p style="font-size:16px;line-height:1.6;"><span class="lang-es">Este es uno de los problemas más comunes en Honda — lo vemos todo el tiempo en Austin. Muchos piensan que la ignición "se dañó de repente" pero en realidad, el problema empieza mucho antes.</span><span class="lang-en">This is one of the most common problems with Honda — we see it all the time in Austin. Many think the ignition "failed suddenly" but actually, the problem starts much earlier.</span></p>
+      </div>
+
+      <div class="warning-box" style="margin-bottom:32px;">
+        <div class="wb-icon">⚠️</div>
+        <div>
+          <strong><span class="lang-es">Antes de Que Empeore</span><span class="lang-en">Before It Gets Worse</span></strong>
+          <p style="font-size:16px;color:var(--text-light);margin-top:8px;line-height:1.6;">
+            <span class="lang-es">Si tu llave está empezando a sentirse dura o difícil de girar — no lo ignores. Esto es una señal clara de desgaste. Lo que empieza como algo pequeño puede terminar con la ignición completamente bloqueada.</span>
+            <span class="lang-en">If your key is starting to feel stiff or hard to turn — don't ignore it. This is a clear sign of wear. What starts as something small can end with the ignition completely blocked.</span>
+          </p>
+          <div style="text-align:center;margin-top:16px;">
+            <a href="tel:5127885155" class="btn btn-accent" style="font-size:16px;padding:12px 24px;"><span class="lang-es">Llama ahora antes de que la llave deje de girar</span><span class="lang-en">Call now before the key stops turning</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:32px;">
+        <div>
+          <div class="card">
+            <h3 style="margin-bottom:16px;"><span class="lang-es">¿Dónde Empieza el Problema?</span><span class="lang-en">Where Does the Problem Start?</span></h3>
+            <p style="font-size:16px;color:var(--text-light);margin-bottom:16px;"><span class="lang-es">En la mayoría de los casos:</span><span class="lang-en">In most cases:</span></p>
+            <div style="background:var(--bg2);padding:16px;border-radius:8px;margin-bottom:16px;">
+              <p style="font-weight:600;margin-bottom:12px;"><span class="lang-es">Todo empieza con la llave</span><span class="lang-en">Everything starts with the key</span></p>
+              <p style="font-size:14px;color:var(--text-light);margin-bottom:12px;"><span class="lang-es">Con el tiempo:</span><span class="lang-en">Over time:</span></p>
+              <ul style="list-style:none;padding-left:20px;">
+                <li style="margin-bottom:8px;">• <span class="lang-es">La llave se desgasta</span><span class="lang-en">The key wears down</span></li>
+                <li style="margin-bottom:8px;">• <span class="lang-es">Pierde su forma</span><span class="lang-en">Loses its shape</span></li>
+                <li style="margin-bottom:8px;">• <span class="lang-es">Ya no coincide correctamente con la ignición</span><span class="lang-en">No longer matches the ignition correctly</span></li>
+              </ul>
+              <p style="font-size:14px;color:var(--accent-light);margin-top:12px;"><span class="lang-es">Esto crea presión interna desigual. Aunque todavía funcione… el daño ya puede estar pasando.</span><span class="lang-en">This creates uneven internal pressure. Even though it still works… damage may already be happening.</span></p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <h3 style="margin-bottom:16px;"><span class="lang-es">Problema Común en Honda</span><span class="lang-en">Common Honda Problem</span></h3>
+            <p style="font-size:16px;line-height:1.6;margin-bottom:16px;"><span class="lang-es">Dentro de la ignición hay piezas pequeñas (wafers) que deben alinearse perfectamente con la llave. Cuando la llave está desgastada:</span><span class="lang-en">Inside the ignition there are small pieces (wafers) that must align perfectly with the key. When the key is worn:</span></p>
+            <ul style="list-style:none;padding-left:20px;">
+              <li style="margin-bottom:8px;">• <span class="lang-es">Las piezas no se alinean</span><span class="lang-en">The pieces don't align</span></li>
+              <li style="margin-bottom:8px;">• <span class="lang-es">La llave se pone dura</span><span class="lang-en">The key gets stiff</span></li>
+              <li style="margin-bottom:8px;">• <span class="lang-es">La ignición empieza a fallar</span><span class="lang-en">The ignition starts to fail</span></li>
+              <li>• <span class="lang-es">Y eventualmente deja de girar completamente</span><span class="lang-en">And eventually stops turning completely</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background:var(--bg2);margin-bottom:32px;">
+        <h3 style="margin-bottom:16px;"><span class="lang-es">Señales de Advertencia</span><span class="lang-en">Warning Signs</span></h3>
+        <p style="font-size:16px;color:var(--text-light);margin-bottom:16px;"><span class="lang-es">Antes de que falle por completo, notarás:</span><span class="lang-en">Before it fails completely, you'll notice:</span></p>
+        <div class="grid-2">
+          <ul class="check-list">
+            <li><span class="lang-es">La llave se siente dura</span><span class="lang-en">Key feels stiff</span></li>
+            <li><span class="lang-es">Tienes que moverla para que funcione</span><span class="lang-en">You have to wiggle it to work</span></li>
+            <li><span class="lang-es">A veces arranca, a veces no</span><span class="lang-en">Sometimes starts, sometimes doesn't</span></li>
+            <li><span class="lang-es">Se siente diferente que antes</span><span class="lang-en">Feels different than before</span></li>
+          </ul>
+          <div style="padding:16px;background:var(--accent-light);border-radius:8px;">
+            <p style="font-weight:600;color:var(--primary);"><span class="lang-es">Si ves esto, el problema ya empezó. Arreglarlo temprano es más rápido y más barato.</span><span class="lang-en">If you see this, the problem has already started. Fixing it early is faster and cheaper.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:32px;">
+        <div class="card">
+          <h3 style="margin-bottom:16px;"><span class="lang-es">Experiencia Real (Honda)</span><span class="lang-en">Real Experience (Honda)</span></h3>
+          <p style="font-size:16px;line-height:1.6;"><span class="lang-es">Hace años, uno de mis primeros trabajos fue un Honda Civic donde la llave no giraba para nada. Me tomó casi 4 horas desmontar la ignición. Cuando la abrí, encontré el problema: una pieza interna estaba bloqueando la llave. La arreglé… y funcionó perfecto.</span><span class="lang-en">Years ago, one of my first jobs was a Honda Civic where the key wouldn't turn at all. It took me almost 4 hours to disassemble the ignition. When I opened it, I found the problem: an internal piece was blocking the key. I fixed it… and it worked perfectly.</span></p>
+          <div style="background:var(--bg2);padding:16px;border-radius:8px;margin-top:16px;">
+            <p style="font-weight:600;color:var(--primary);"><span class="lang-es">Hoy en día, ese mismo trabajo toma 20–30 minutos. La experiencia hace toda la diferencia.</span><span class="lang-en">Today, that same job takes 20–30 minutes. Experience makes all the difference.</span></p>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:16px;"><span class="lang-es">Otro Caso Real en Austin</span><span class="lang-en">Another Real Case in Austin</span></h3>
+          <p style="font-size:16px;line-height:1.6;"><span class="lang-es">Cliente tenía una Honda donde la llave funcionaba solo a veces. Pensó que no era grave. La ignición ya estaba a punto de fallar completamente.</span><span class="lang-en">Customer had a Honda where the key worked only sometimes. Thought it wasn't serious. The ignition was about to fail completely.</span></p>
+          <p style="font-size:16px;color:var(--accent-light);margin-top:16px;"><span class="lang-es">✅ La reparamos en el momento y evitamos que el carro quedara varado.</span><span class="lang-en">✅ We repaired it on the spot and prevented the car from getting stranded.</span></p>
+        </div>
+      </div>
+
+      <div class="warning-box" style="margin-bottom:32px;">
+        <div class="wb-icon">❗</div>
+        <div>
+          <strong><span class="lang-es">Error Muy Común</span><span class="lang-en">Very Common Mistake</span></strong>
+          <p style="font-size:16px;color:var(--text-light);margin-top:8px;line-height:1.6;"><span class="lang-es">Cuando la llave se empieza a atorar, muchas personas:</span><span class="lang-en">When the key starts getting stuck, many people:</span></p>
+          <ul style="list-style:none;padding-left:20px;margin-top:12px;">
+            <li style="margin-bottom:8px;">• <span class="lang-es">Siguen usando la misma llave desgastada</span><span class="lang-en">Keep using the same worn key</span></li>
+            <li style="margin-bottom:8px;">• <span class="lang-es">Fuerzan la llave</span><span class="lang-en">Force the key</span></li>
+            <li>• <span class="lang-es">Ignoran el problema</span><span class="lang-en">Ignore the problem</span></li>
+          </ul>
+          <p style="font-size:16px;color:var(--accent-light);margin-top:12px;"><span class="lang-es">Esto es lo que más daño causa.</span><span class="lang-en">This is what causes the most damage.</span></p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:32px;">
+        <h3 style="margin-bottom:16px;"><span class="lang-es">Problemas con Llaves Remotas (Muy Común en Honda)</span><span class="lang-en">Remote Key Problems (Very Common in Honda)</span></h3>
+        <p style="font-size:16px;line-height:1.6;"><span class="lang-es">Otro problema frecuente:</span><span class="lang-en">Another frequent problem:</span></p>
+        <ul style="list-style:none;padding-left:20px;">
+          <li style="margin-bottom:8px;">• <span class="lang-es">Carcasa rota</span><span class="lang-en">Broken shell</span></li>
+          <li style="margin-bottom:8px;">• <span class="lang-es">Botones que no funcionan</span><span class="lang-en">Buttons that don't work</span></li>
+          <li style="margin-bottom:8px;">• <span class="lang-es">Llave floja</span><span class="lang-en">Loose key</span></li>
+        </ul>
+        <p style="font-size:16px;color:var(--accent-light);margin-top:16px;"><span class="lang-es">Pero muchas veces la electrónica todavía funciona.</span><span class="lang-en">But often the electronics still work.</span></p>
+      </div>
+
+      <div class="card" style="background:var(--bg2);margin-bottom:32px;">
+        <h3 style="margin-bottom:16px;"><span class="lang-es">Solución Inteligente (Ahorra Dinero)</span><span class="lang-en">Smart Solution (Save Money)</span></h3>
+        <p style="font-size:16px;line-height:1.6;"><span class="lang-es">En lugar de reemplazar toda la llave:</span><span class="lang-en">Instead of replacing the whole key:</span></p>
+        <div style="background:var(--accent-light);padding:16px;border-radius:8px;">
+          <p style="font-weight:600;margin-bottom:12px;"><span class="lang-es">Podemos:</span><span class="lang-en">We can:</span></p>
+          <ul style="list-style:none;padding-left:20px;">
+            <li style="margin-bottom:8px;">• <span class="lang-es">Cambiar la carcasa</span><span class="lang-en">Change the shell</span></li>
+            <li style="margin-bottom:8px;">• <span class="lang-es">Cortar una nueva hoja</span><span class="lang-en">Cut a new blade</span></li>
+            <li style="margin-bottom:8px;">• <span class="lang-es">Transferir la electrónica</span><span class="lang-en">Transfer the electronics</span></li>
+          </ul>
+          <p style="font-size:16px;color:var(--primary);margin-top:12px;"><span class="lang-es">Resultado: llave como nueva sin costo de concesionario.</span><span class="lang-en">Result: key like new without dealership cost.</span></p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:32px;">
+        <div class="card">
+          <h3 style="margin-bottom:16px;">🚗 <span class="lang-es">Servicios Honda</span><span class="lang-en">Honda Services</span></h3>
+          <ul class="check-list">
+            <li><span class="lang-es">Reemplazo de llaves Honda perdidas</span><span class="lang-en">Lost Honda key replacement</span></li>
+            <li><span class="lang-es">Copias de llaves</span><span class="lang-en">Key copies</span></li>
+            <li><span class="lang-es">Programación de chip</span><span class="lang-en">Chip programming</span></li>
+            <li><span class="lang-es">Reparación de ignición</span><span class="lang-en">Ignition repair</span></li>
+            <li><span class="lang-es">Extracción de llaves rotas</span><span class="lang-en">Broken key extraction</span></li>
+            <li><span class="lang-es">Lockout (abrir carro)</span><span class="lang-en">Lockout (car opening)</span></li>
+          </ul>
+          <p style="font-size:16px;color:var(--accent-light);margin-top:16px;"><span class="lang-es">Todo en el lugar — sin grúa.</span><span class="lang-en">All on the spot — no tow truck.</span></p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:16px;">🚘 <span class="lang-es">¿Tienes Acura?</span><span class="lang-en">Have an Acura?</span></h3>
+          <p style="font-size:16px;line-height:1.6;"><span class="lang-es">Honda y Acura comparten muchos sistemas. Eso significa que muchos problemas son iguales. Pero Acura suele usar sistemas más avanzados (smart key / push-to-start).</span><span class="lang-en">Honda and Acura share many systems. That means many problems are the same. But Acura often uses more advanced systems (smart key / push-to-start).</span></p>
+        </div>
+      </div>
+
+      <div class="card" style="background:var(--bg2);margin-bottom:32px;">
+        <h3 style="margin-bottom:16px;"><span class="lang-es">Problemas Comunes en Acura</span><span class="lang-en">Common Problems in Acura</span></h3>
+        <ul style="list-style:none;padding-left:20px;">
+          <li style="margin-bottom:8px;">• <span class="lang-es">"Key not detected"</span></li>
+          <li style="margin-bottom:8px;">• <span class="lang-es">Botón de encendido no responde</span><span class="lang-en">Start button doesn't respond</span></li>
+          <li style="margin-bottom:8px;">• <span class="lang-es">El carro no arranca</span><span class="lang-en">Car won't start</span></li>
+          <li style="margin-bottom:8px;">• <span class="lang-es">El control funciona a veces</span><span class="lang-en">Remote works sometimes</span></li>
+        </ul>
+        <p style="font-size:16px;color:var(--accent-light);margin-top:16px;"><span class="lang-es">En muchos casos, no es algo grave.</span><span class="lang-en">In many cases, it's not serious.</span></p>
+      </div>
+
+      <div class="tip-box" style="margin-bottom:32px;">
+        <div style="font-size:24px;">⚡</div>
+        <div>
+          <strong><span class="lang-es">Tip Rápido (Muy Importante)</span><span class="lang-en">Quick Tip (Very Important)</span></strong>
+          <p style="font-size:16px;color:var(--text-light);margin-top:8px;line-height:1.6;"><span class="lang-es">Si tu Acura no arranca: Acerca la llave al botón de encendido. El sistema puede detectarla incluso con batería baja.</span><span class="lang-en">If your Acura won't start: Bring the key close to the start button. The system can detect it even with a low battery.</span></p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:32px;">
+        <div class="card">
+          <h3 style="margin-bottom:16px;">� <span class="lang-es">Servicios Acura</span><span class="lang-en">Acura Services</span></h3>
+          <ul class="check-list">
+            <li><span class="lang-es">Programación de smart key</span><span class="lang-en">Smart key programming</span></li>
+            <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+            <li><span class="lang-es">Copias</span><span class="lang-en">Key copies</span></li>
+            <li><span class="lang-es">Reparación de controles</span><span class="lang-en">Remote repair</span></li>
+            <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+          </ul>
+          <p style="font-size:16px;color:var(--accent-light);margin-top:16px;"><span class="lang-es">Todo en el lugar en Austin.</span><span class="lang-en">All on the spot in Austin.</span></p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:16px;">❓ <span class="lang-es">Preguntas Frecuentes</span><span class="lang-en">Frequently Asked Questions</span></h3>
+          <div style="background:var(--bg2);padding:16px;border-radius:8px;">
+            <p style="font-weight:600;margin-bottom:8px;"><span class="lang-es">¿Por qué mi llave Honda no gira?</span><span class="lang-en">Why won't my Honda key turn?</span></p>
+            <p><span class="lang-es">Generalmente por desgaste de la llave.</span><span class="lang-en">Generally due to key wear.</span></p>
+            <p style="font-weight:600;margin-bottom:8px;margin-top:12px;"><span class="lang-es">¿Necesito cambiar la ignición?</span><span class="lang-en">Do I need to change the ignition?</span></p>
+            <p><span class="lang-es">No siempre — muchas se pueden reparar.</span><span class="lang-en">Not always — many can be repaired.</span></p>
+            <p style="font-weight:600;margin-bottom:8px;margin-top:12px;"><span class="lang-es">¿Pueden arreglarlo en el lugar?</span><span class="lang-en">Can you fix it on the spot?</span></p>
+            <p><span class="lang-es">Sí.</span><span class="lang-en">Yes.</span></p>
+            <p style="font-weight:600;margin-bottom:8px;margin-top:12px;"><span class="lang-es">¿Pueden reparar una llave remota?</span><span class="lang-en">Can you repair a remote key?</span></p>
+            <p><span class="lang-es">Sí, en muchos casos.</span><span class="lang-en">Yes, in many cases.</span></p>
+            <p style="font-weight:600;margin-bottom:8px;margin-top:12px;"><span class="lang-es">¿Qué pasa si lo ignoro?</span><span class="lang-en">What happens if I ignore it?</span></p>
+            <p><span class="lang-es">Se va a empeorar.</span><span class="lang-en">It's going to get worse.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CALL TO ACTION -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner">
+        <h2><span class="lang-es">Llamado Final</span><span class="lang-en">Final Call</span></h2>
+        <p><span class="lang-es">Si tu llave Honda o Acura está fallando — no esperes.</span><span class="lang-en">If your Honda or Acura key is failing — don't wait.</span></p>
+        <p style="font-size:18px;font-weight:600;margin-top:12px;"><span class="lang-es">Podemos arreglarlo en el lugar, rápido.</span><span class="lang-en">We can fix it on the spot, fast.</span></p>
+        <div style="margin-top:24px;text-align:center;">
+          <div style="font-size:20px;font-weight:700;color:var(--primary);margin-bottom:8px;">Austin Car Key & Ignition</div>
+          <p style="font-size:16px;color:var(--text-light);"><span class="lang-es">Servicio móvil en Austin</span><span class="lang-en">Mobile service in Austin</span></p>
+        </div>
+        <div style="margin-top:24px;">
+          <a href="tel:5127885155" class="btn" style="background:#fff;color:var(--accent);font-size:18px;padding:16px 36px;">📞 (512) 788-5155</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- SERVICES BY BRANDS SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="section-heading center text-center">
+      <h2><span class="lang-es">Trabajamos con Todas las Marcas</span><span class="lang-en">We Work with All Brands</span></h2>
+      <p><span class="lang-es">Cada carro es diferente — y eso importa.</span><span class="lang-en">Every car is different — and that matters.</span></p>
+    </div>
+    <div style="text-align:center;margin-top:8px;">
+      <div class="grid-3" style="gap:20px;">
+        <div class="card" style="text-align:center;padding:20px;cursor:pointer;" onclick="location.href='honda.html'">
+          <div style="font-size:32px;margin-bottom:12px;">🚗</div>
+          <h3 style="font-size:18px;margin-bottom:8px;">Honda / Acura</h3>
+          <p style="font-size:14px;color:var(--text-light);margin-bottom:16px;"><span class="lang-es">Llaves que no giran, ignición dura, programación</span><span class="lang-en">Keys won't turn, stiff ignition, programming</span></p>
+          <div class="btn btn-accent" style="font-size:14px;padding:8px 16px;display:inline-block;"><span class="lang-es">Ver Más</span><span class="lang-en">View More</span></div>
+        </div>
+        <div class="card" style="text-align:center;padding:20px;cursor:pointer;" onclick="location.href='toyota.html'">
+          <div style="font-size:32px;margin-bottom:12px;">🚙</div>
+          <h3 style="font-size:18px;margin-bottom:8px;">Toyota / Lexus</h3>
+          <p style="font-size:14px;color:var(--text-light);margin-bottom:16px;"><span class="lang-es">Reprogramación, llaves inteligentes, duplicados</span><span class="lang-en">Reprogramming, smart keys, duplicates</span></p>
+          <div class="btn btn-accent" style="font-size:14px;padding:8px 16px;display:inline-block;"><span class="lang-es">Ver Más</span><span class="lang-en">View More</span></div>
+        </div>
+        <div class="card" style="text-align:center;padding:20px;cursor:pointer;" onclick="location.href='nissan.html'">
+          <div style="font-size:32px;margin-bottom:12px;">🚕</div>
+          <h3 style="font-size:18px;margin-bottom:8px;">Nissan / Infiniti</h3>
+          <p style="font-size:14px;color:var(--text-light);margin-bottom:16px;"><span class="lang-es">"Key not detected", push-to-start, FOB</span><span class="lang-en">"Key not detected", push-to-start, FOB</span></p>
+          <div class="btn btn-accent" style="font-size:14px;padding:8px 16px;display:inline-block;"><span class="lang-es">Ver Más</span><span class="lang-en">View More</span></div>
+        </div>
+        <div class="card" style="text-align:center;padding:20px;cursor:pointer;" onclick="location.href='ford.html'">
+          <div style="font-size:32px;margin-bottom:12px;">🏎️</div>
+          <h3 style="font-size:18px;margin-bottom:8px;">Ford / Lincoln</h3>
+          <p style="font-size:14px;color:var(--text-light);margin-bottom:16px;"><span class="lang-es">Pat, MyKey, llaves remotas, transponders</span><span class="lang-en">Pat, MyKey, remote keys, transponders</span></p>
+          <div class="btn btn-accent" style="font-size:14px;padding:8px 16px;display:inline-block;"><span class="lang-es">Ver Más</span><span class="lang-en">View More</span></div>
+        </div>
+        <div class="card" style="text-align:center;padding:20px;cursor:pointer;" onclick="location.href='dodge.html'">
+          <div style="font-size:32px;margin-bottom:12px;">🚐</div>
+          <h3 style="font-size:18px;margin-bottom:8px;">Dodge / Chrysler / Jeep</h3>
+          <p style="font-size:14px;color:var(--text-light);margin-bottom:16px;"><span class="lang-es">Proximidad, FOBIK, llaves de envío</span><span class="lang-en">Proximity, FOBIK, sentry keys</span></p>
+          <div class="btn btn-accent" style="font-size:14px;padding:8px 16px;display:inline-block;"><span class="lang-es">Ver Más</span><span class="lang-en">View More</span></div>
+        </div>
+        <div class="card" style="text-align:center;padding:20px;cursor:pointer;" onclick="location.href='chevy.html'">
+          <div style="font-size:32px;margin-bottom:12px;">🚚</div>
+          <h3 style="font-size:18px;margin-bottom:8px;">Chevrolet / GMC</h3>
+          <p style="font-size:14px;color:var(--text-light);margin-bottom:16px;"><span class="lang-es">Passkey, VATS, llaves de corte lateral</span><span class="lang-en">Passkey, VATS, sidewinder keys</span></p>
+          <div class="btn btn-accent" style="font-size:14px;padding:8px 16px;display:inline-block;"><span class="lang-es">Ver Más</span><span class="lang-en">View More</span></div>
+        </div>
+        <div class="card" style="text-align:center;padding:20px;cursor:pointer;" onclick="location.href='hyundai.html'">
+          <div style="font-size:32px;margin-bottom:12px;">🚘</div>
+          <h3 style="font-size:18px;margin-bottom:8px;">Hyundai / Kia</h3>
+          <p style="font-size:14px;color:var(--text-light);margin-bottom:16px;"><span class="lang-es">Smart key, llaves de metal, inmovilizador</span><span class="lang-en">Smart key, metal keys, immobilizer</span></p>
+          <div class="btn btn-accent" style="font-size:14px;padding:8px 16px;display:inline-block;"><span class="lang-es">Ver Más</span><span class="lang-en">View More</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section" style="background:var(--bg2);">
+  <div class="container">
+    <div class="section-heading center text-center">
+      <h2><span class="lang-es">Preguntas Frecuentes</span><span class="lang-en">Frequently Asked Questions</span></h2>
+      <p style="color:var(--text-light);"><span class="lang-es">Respuestas sobre llaves Honda y Acura</span><span class="lang-en">Answers about Honda and Acura keys</span></p>
+    </div>
+    <div class="container" style="max-width:780px;">
+      <div class="faq-item faq-open">
+        <div class="faq-q">
+          <span class="lang-es">¿Por qué mi llave Honda se siente dura?</span>
+          <span class="lang-en">Why does my Honda key feel stiff?</span>
+        </div>
+        <div class="faq-a">
+          <span class="lang-es">Es desgaste normal de la llave. Con el tiempo, la llave pierde su forma y ya no coincide perfectamente con la ignición, causando fricción.</span>
+          <span class="lang-en">It's normal key wear. Over time, the key loses its shape and no longer matches the ignition perfectly, causing friction.</span>
+        </div>
+      </div>
+      <div class="faq-item faq-open">
+        <div class="faq-q">
+          <span class="lang-es">¿Pueden reparar la ignición o necesito reemplazarla?</span>
+          <span class="lang-en">Can you repair the ignition or do I need to replace it?</span>
+        </div>
+        <div class="faq-a">
+          <span class="lang-es">En la mayoría de los casos sí podemos repararla. Solo recomendamos reemplazo si hay daño severo. Siempre diagnosticamos primero.</span>
+          <span class="lang-en">In most cases we can repair it. We only recommend replacement if there's severe damage. We always diagnose first.</span>
+        </div>
+      </div>
+      <div class="faq-item faq-open">
+        <div class="faq-q">
+          <span class="lang-es">¿Cuánto tiempo toma hacer una llave nueva?</span>
+          <span class="lang-en">How long does it take to make a new key?</span>
+        </div>
+        <div class="faq-a">
+          <span class="lang-es">Normalmente 20-40 minutos en el lugar. No necesitas llevar el carro a ninguna parte.</span>
+          <span class="lang-en">Usually 20-40 minutes on the spot. You don't need to take the car anywhere.</span>
+        </div>
+      </div>
+      <div class="faq-item faq-open">
+        <div class="faq-q">
+          <span class="lang-es">¿Trabajan con smart keys de Acura?</span>
+          <span class="lang-en">Do you work with Acura smart keys?</span>
+        </div>
+        <div class="faq-a">
+          <span class="lang-es">Sí, programamos smart keys, reemplazamos baterías y hacemos copias de todos los modelos Acura.</span>
+          <span class="lang-en">Yes, we program smart keys, replace batteries and make copies of all Acura models.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <img src="assets/images/logo.webp" alt="Austin Car Key & Ignition" style="height: 50px; width: auto; background: white; padding: 10px; border-radius: 10px;">
+        </div>
+        <p style="font-size:14px;line-height:1.7;"><span class="lang-es">Servicio móvil de llaves Honda y Acura en Austin, TX</span><span class="lang-en">Mobile Honda and Acura key service in Austin, TX</span></p>
+        <p style="margin-top:12px;font-size:14px;">📍 1803 W 35th St STE D, Austin, TX 78703</p>
+        <p style="margin-top:4px;font-size:14px;">📞 <a href="tel:5127885155">(512) 788-5155</a></p>
+      </div>
+      <div>
+        <h4><span class="lang-es">Servicios</span><span class="lang-en">Services</span></h4>
+        <ul style="list-style:none;line-height:2.2;">
+          <li><a href="honda.html">Honda / Acura</a></li>
+          <li><a href="toyota.html">Toyota / Lexus</a></li>
+          <li><a href="nissan.html">Nissan / Infiniti</a></li>
+          <li><a href="ford.html">Ford / Lincoln</a></li>
+          <li><a href="dodge.html">Dodge / Chrysler / Jeep</a></li>
+          <li><a href="chevy.html">Chevrolet / GMC</a></li>
+          <li><a href="hyundai.html">Hyundai / Kia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-es">Navegación</span><span class="lang-en">Navigation</span></h4>
+        <ul style="list-style:none;line-height:2.4;">
+          <li><a href="index.html"><span class="lang-es">Inicio</span><span class="lang-en">Home</span></a></li>
+          <li><a href="about.html"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a></li>
+          <li><a href="contact.html"><span class="lang-es">Contacto</span><span class="lang-en">Contact Us</span></a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="reviews.html"><span class="lang-es">Reseñas</span><span class="lang-en">Reviews</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-es">Áreas de Servicio</span><span class="lang-en">Service Areas</span></h4>
+        <ul style="list-style:none;line-height:2.2;font-size:14px;">
+          <li>📍 Austin</li>
+          <li>📍 North / South / East / West Austin</li>
+          <li>📍 Round Rock</li>
+          <li>📍 Cedar Park</li>
+          <li>📍 Pflugerville</li>
+          <li>📍 Georgetown</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Austin Car Key & Ignition. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></span>
+      <a href="http://austincarkeyandignition.com/">austincarkeyandignition.com</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING PHONE -->
+<div class="float-phone">
+  <a href="tel:5127885155">📞 (512) 788-5155</a>
+</div>
+
+<script>
+  // Language toggle
+  function setLang(lang) {
+    if (lang === 'en') {
+      document.body.classList.add('english');
+      document.documentElement.lang = 'en';
+    } else {
+      document.body.classList.remove('english');
+      document.documentElement.lang = 'es';
+    }
+    document.getElementById('btnEs').classList.toggle('active', lang === 'es');
+    document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+  }
+
+  // Mobile menu
+  function toggleMobile() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMobileIfBg(e) {
+    if (e.target === document.getElementById('mobileMenu')) toggleMobile();
+  }
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

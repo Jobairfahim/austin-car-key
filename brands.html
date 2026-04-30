@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Austin Car Key & Ignition - Servicio especializado por marca de llaves de carro y reparación de ignición en Austin, TX">
+<title>Servicios por Marca - Austin Car Key & Ignition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="assets/images/logo.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- TRANSLATE BAR -->
+<div class="translate-bar">
+  <div class="container">
+    <span class="lang-es">🌐 Idioma:</span>
+    <span class="lang-en">🌐 Language:</span>
+    <button class="lang-btn active" id="btnEs" onclick="setLang('es')">Español</button>
+    <button class="lang-btn" id="btnEn" onclick="setLang('en')">English</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo.webp" alt="Austin Car Key & Ignition" style="height: 60px; width: auto; background: white; padding: 10px; border-radius: 10px;">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">
+        <span class="lang-es">Inicio</span>
+        <span class="lang-en">Home</span>
+      </a>
+      <div class="dropdown">
+        <div class="nav-item">
+          <span class="lang-es">Servicios</span>
+          <span class="lang-en">Services</span>
+          ▾
+        </div>
+        <div class="dropdown-menu">
+          <a href="#honda"><span class="dm-icon">🚗</span> Honda / Acura</a>
+          <a href="#toyota"><span class="dm-icon">🚗</span> Toyota / Lexus</a>
+          <a href="#nissan"><span class="dm-icon">🚗</span> Nissan / Infiniti</a>
+          <a href="#ford"><span class="dm-icon">🚗</span> Ford / Lincoln</a>
+          <a href="#dodge"><span class="dm-icon">🚗</span> Dodge / Chrysler / Jeep</a>
+          <a href="#chevy"><span class="dm-icon">🚗</span> Chevrolet / GMC</a>
+          <a href="#hyundai"><span class="dm-icon">🚗</span> Hyundai / Kia</a>
+        </div>
+      </div>
+      <a href="about.html">
+        <span class="lang-es">Nosotros</span>
+        <span class="lang-en">About</span>
+      </a>
+      <a href="contact.html">
+        <span class="lang-es">Contacto</span>
+        <span class="lang-en">Contact Us</span>
+      </a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html">
+        <span class="lang-es">Reseñas</span>
+        <span class="lang-en">Reviews</span>
+      </a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:5127885155" class="nav-phone">📞 (512) 788-5155</a>
+      <a href="tel:5127885155" class="btn btn-accent">
+        <span class="lang-es">Llamar Ahora</span>
+        <span class="lang-en">Call Now</span>
+      </a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" onclick="closeMobileIfBg(event)">
+  <div class="mobile-panel">
+    <button class="close-btn" onclick="toggleMobile()">✕</button>
+    <br>
+    <a href="index.html" onclick="toggleMobile()"><span class="lang-es">🏠 Inicio</span><span class="lang-en">🏠 Home</span></a>
+    <div class="mob-nav-item" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">
+      <span class="lang-es">🔧 Servicios ▾</span>
+      <span class="lang-en">🔧 Services ▾</span>
+    </div>
+    <div style="display:none">
+      <a class="mob-sub" href="#honda" onclick="toggleMobile()">Honda / Acura</a>
+      <a class="mob-sub" href="#toyota" onclick="toggleMobile()">Toyota / Lexus</a>
+      <a class="mob-sub" href="#nissan" onclick="toggleMobile()">Nissan / Infiniti</a>
+      <a class="mob-sub" href="#ford" onclick="toggleMobile()">Ford / Lincoln</a>
+      <a class="mob-sub" href="#dodge" onclick="toggleMobile()">Dodge / Chrysler / Jeep</a>
+      <a class="mob-sub" href="#chevy" onclick="toggleMobile()">Chevrolet / GMC</a>
+      <a class="mob-sub" href="#hyundai" onclick="toggleMobile()">Hyundai / Kia</a>
+    </div>
+    <a href="about.html" onclick="toggleMobile()"><span class="lang-es">ℹ️ Nosotros</span><span class="lang-en">ℹ️ About</span></a>
+    <a href="contact.html" onclick="toggleMobile()"><span class="lang-es">📞 Contacto</span><span class="lang-en">📞 Contact Us</span></a>
+    <a href="faq.html" onclick="toggleMobile()">❓ FAQ</a>
+    <a href="reviews.html" onclick="toggleMobile()"><span class="lang-es">⭐ Reseñas</span><span class="lang-en">⭐ Reviews</span></a>
+    <br>
+    <a href="tel:5127885155" class="btn btn-accent" style="width:100%;justify-content:center;margin-top:10px;">📞 (512) 788-5155</a>
+  </div>
+</div>
+
+<main>
+  <section style="background:var(--primary);padding:48px 0 32px;">
+    <div class="container">
+      <div class="badge badge-accent" style="margin-bottom:12px;"><span class="lang-es">Servicios por Marca</span><span class="lang-en">Services by Brand</span></div>
+      <h1 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);"><span class="lang-es">Servicio Especializado por Marca</span><span class="lang-en">Specialized Service by Brand</span></h1>
+      <p style="color:rgba(255,255,255,0.8);margin-top:8px;"><span class="lang-es">Selecciona tu marca para ver problemas comunes, tips y servicios específicos.</span><span class="lang-en">Select your brand to see common issues, tips and specific services.</span></p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="brand-tabs">
+        <button class="brand-tab active" id="tab-honda" onclick="setBrandTab('honda')">Honda / Acura</button>
+        <button class="brand-tab" id="tab-toyota" onclick="setBrandTab('toyota')">Toyota / Lexus</button>
+        <button class="brand-tab" id="tab-nissan" onclick="setBrandTab('nissan')">Nissan / Infiniti</button>
+        <button class="brand-tab" id="tab-ford" onclick="setBrandTab('ford')">Ford / Lincoln</button>
+        <button class="brand-tab" id="tab-dodge" onclick="setBrandTab('dodge')">Dodge / Chrysler / Jeep</button>
+        <button class="brand-tab" id="tab-chevy" onclick="setBrandTab('chevy')">Chevrolet / GMC</button>
+        <button class="brand-tab" id="tab-hyundai" onclick="setBrandTab('hyundai')">Hyundai / Kia</button>
+      </div>
+
+      <!-- HONDA -->
+      <div class="brand-content active" id="brand-honda">
+        <div class="brand-hero">
+          <h2 id="honda">🚗 Honda / Acura</h2>
+          <p class="lang-es">Servicio móvil de llaves Honda y Acura en Austin, TX</p>
+          <p class="lang-en">Mobile Honda and Acura key service in Austin, TX</p>
+        </div>
+        <div class="grid-2" style="margin-bottom:24px;">
+          <div>
+            <div class="warning-box" style="margin-bottom:16px;">
+              <div class="wb-icon">⚠️</div>
+              <div>
+                <strong><span class="lang-es">Antes de Que Empeore</span><span class="lang-en">Before It Gets Worse</span></strong>
+                <p style="font-size:14px;color:var(--text-light);margin-top:4px;">
+                  <span class="lang-es">Si tu llave está empezando a sentirse dura o difícil de girar — no lo ignores. Esto es una señal clara de desgaste.</span>
+                  <span class="lang-en">If your key is starting to feel stiff or hard to turn — don't ignore it. This is a clear sign of wear.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">¿Dónde Empieza el Problema?</span><span class="lang-en">Where Does the Problem Start?</span></h3>
+              <ul class="step-list">
+                <li><div class="step-num">1</div><span class="lang-es">La llave se desgasta con el tiempo</span><span class="lang-en">Key wears down over time</span></li>
+                <li><div class="step-num">2</div><span class="lang-es">Pierde su forma correcta</span><span class="lang-en">Loses its proper shape</span></li>
+                <li><div class="step-num">3</div><span class="lang-es">Ya no coincide con la ignición</span><span class="lang-en">No longer matches the ignition</span></li>
+                <li><div class="step-num">4</div><span class="lang-es">Presión interna desigual</span><span class="lang-en">Uneven internal pressure</span></li>
+                <li><div class="step-num">5</div><span class="lang-es">Ignición falla completamente</span><span class="lang-en">Ignition fails completely</span></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="card" style="margin-bottom:16px;">
+              <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Señales de Advertencia</span><span class="lang-en">Warning Signs</span></h3>
+              <ul class="check-list">
+                <li><span class="lang-es">La llave se siente dura</span><span class="lang-en">Key feels stiff</span></li>
+                <li><span class="lang-es">Tienes que moverla para que funcione</span><span class="lang-en">You have to wiggle it to work</span></li>
+                <li><span class="lang-es">A veces arranca, a veces no</span><span class="lang-en">Sometimes starts, sometimes doesn't</span></li>
+                <li><span class="lang-es">Se siente diferente que antes</span><span class="lang-en">Feels different than before</span></li>
+              </ul>
+            </div>
+            <div class="info-box">
+              <div style="font-size:20px;">🔧</div>
+              <div>
+                <strong><span class="lang-es">Solución Inteligente – Ahorra Dinero</span><span class="lang-en">Smart Solution – Save Money</span></strong>
+                <p style="font-size:14px;color:var(--text-light);margin-top:4px;">
+                  <span class="lang-es">En lugar de reemplazar toda la llave: cambiamos la carcasa, cortamos nueva hoja y transferimos la electrónica.</span>
+                  <span class="lang-en">Instead of replacing the whole key: we change the shell, cut a new blade and transfer the electronics.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-bottom:24px;">
+          <div class="card">
+            <h3 style="margin-bottom:12px;font-size:17px;">🚗 <span class="lang-es">Servicios Honda</span><span class="lang-en">Honda Services</span></h3>
+            <ul class="check-list">
+              <li><span class="lang-es">Reemplazo de llaves Honda perdidas</span><span class="lang-en">Lost Honda key replacement</span></li>
+              <li><span class="lang-es">Copias de llaves</span><span class="lang-en">Key copies</span></li>
+              <li><span class="lang-es">Programación de chip</span><span class="lang-en">Chip programming</span></li>
+              <li><span class="lang-es">Reparación de ignición</span><span class="lang-en">Ignition repair</span></li>
+              <li><span class="lang-es">Extracción de llaves rotas</span><span class="lang-en">Broken key extraction</span></li>
+              <li><span class="lang-es">Lockout (abrir carro)</span><span class="lang-en">Lockout (car opening)</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:12px;font-size:17px;">🚘 <span class="lang-es">Servicios Acura</span><span class="lang-en">Acura Services</span></h3>
+            <ul class="check-list">
+              <li><span class="lang-es">Programación de smart key</span><span class="lang-en">Smart key programming</span></li>
+              <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+              <li><span class="lang-es">Copias</span><span class="lang-en">Key copies</span></li>
+              <li><span class="lang-es">Reparación de controles</span><span class="lang-en">Remote repair</span></li>
+              <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+            </ul>
+            <div class="tip-box" style="margin-top:14px;">
+              <div style="font-size:18px;">⚡</div>
+              <div style="font-size:14px;">
+                <strong><span class="lang-es">Tip Rápido Acura:</span><span class="lang-en">Quick Acura Tip:</span></strong>
+                <span class="lang-es"> Acerca la llave al botón de encendido — el sistema puede detectarla incluso con batería baja.</span>
+                <span class="lang-en"> Bring the key close to the start button — the system can detect it even with a low battery.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="case-card">
+            <div class="loc">📍 <span class="lang-es">Experiencia Real</span><span class="lang-en">Real Experience</span></div>
+            <p class="lang-es">Honda Civic — llave no giraba. Tomó casi 4 horas al principio. Una pieza interna estaba bloqueando la llave. Hoy en día, ese mismo trabajo toma 20–30 minutos.</p>
+            <p class="lang-en">Honda Civic — key wouldn't turn. Took almost 4 hours initially. An internal piece was blocking the key. Today, the same job takes 20–30 minutes.</p>
+            <p class="result lang-es">✅ La experiencia hace toda la diferencia.</p>
+            <p class="result lang-en">✅ Experience makes all the difference.</p>
+          </div>
+          <div class="case-card">
+            <div class="loc">📍 Austin</div>
+            <p class="lang-es">Cliente con Honda — llave funcionaba solo a veces. La ignición ya estaba a punto de fallar completamente.</p>
+            <p class="lang-en">Customer with Honda — key worked only sometimes. The ignition was about to fail completely.</p>
+            <p class="result lang-es">✅ Reparamos en el momento y evitamos que quedara varado.</p>
+            <p class="result lang-en">✅ We repaired on the spot and prevented the car from getting stranded.</p>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <a href="tel:5127885155" class="btn btn-accent" style="font-size:16px;padding:16px 36px;">📞 (512) 788-5155 — <span class="lang-es">Llamar Ahora</span><span class="lang-en">Call Now</span></a>
+        </div>
+      </div>
+
+      <!-- TOYOTA -->
+      <div class="brand-content" id="brand-toyota">
+        <div class="brand-hero">
+          <h2 id="toyota">🚗 Toyota / Lexus</h2>
+          <p class="lang-es">Servicio móvil de llaves Toyota y Lexus en Austin, TX</p>
+          <p class="lang-en">Mobile Toyota and Lexus key service in Austin, TX</p>
+        </div>
+        <div class="grid-2" style="margin-bottom:24px;">
+          <div>
+            <div class="card" style="margin-bottom:16px;">
+              <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Sistemas de Llaves Toyota</span><span class="lang-en">Toyota Key Systems</span></h3>
+              <ul class="step-list">
+                <li><div class="step-num">1</div><span class="lang-es">Modelos viejos → llaves simples</span><span class="lang-en">Older models → simple keys</span></li>
+                <li><div class="step-num">2</div><span class="lang-es">Modelos intermedios → llaves con chip</span><span class="lang-en">Mid models → chip keys</span></li>
+                <li><div class="step-num">3</div><span class="lang-es">Modelos nuevos → smart key / push-to-start</span><span class="lang-en">New models → smart key / push-to-start</span></li>
+              </ul>
+              <p style="font-size:13px;color:var(--text-light);margin-top:10px;">
+                <span class="lang-es">Cada sistema requiere un proceso diferente. Usar el método incorrecto puede costar más dinero.</span>
+                <span class="lang-en">Each system requires a different process. Using the wrong method can cost more money.</span>
+              </p>
+            </div>
+            <div class="warning-box">
+              <div class="wb-icon">⚠️</div>
+              <div>
+                <strong><span class="lang-es">Caso Importante – "All Keys Lost" Toyota</span><span class="lang-en">Important Case – "All Keys Lost" Toyota</span></strong>
+                <p style="font-size:14px;color:var(--text-light);margin-top:4px;">
+                  <span class="lang-es">En algunos Toyota (años 90–2000) el sistema puede bloquear nuevas llaves. Muchos dicen: "Hay que cambiar ECU". Nosotros podemos resetear y reprogramar.</span>
+                  <span class="lang-en">In some Toyotas (90s–2000s) the system can block new keys. Many say: "Need to replace ECU". We can reset and reprogram.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card" style="margin-bottom:16px;">
+              <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Señales de Inmovilizador</span><span class="lang-en">Immobilizer Signs</span></h3>
+              <ul class="check-list">
+                <li><span class="lang-es">El carro gira pero no arranca</span><span class="lang-en">Engine cranks but won't start</span></li>
+                <li><span class="lang-es">Luz de seguridad parpadeando</span><span class="lang-en">Security light blinking</span></li>
+                <li><span class="lang-es">La llave no es aceptada</span><span class="lang-en">Key not accepted</span></li>
+                <li><span class="lang-es">Smart key no detectada</span><span class="lang-en">Smart key not detected</span></li>
+              </ul>
+            </div>
+            <div class="tip-box">
+              <div style="font-size:20px;">⚡</div>
+              <div>
+                <strong>Tip Lexus: </strong>
+                <span class="lang-es">Si tu Lexus no arranca, acerca la llave al botón de encendido. El sistema puede detectarla incluso con batería baja.</span>
+                <span class="lang-en">If your Lexus won't start, bring the key close to the start button. The system can detect it even with low battery.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-bottom:24px;">
+          <div class="card">
+            <h3 style="margin-bottom:12px;font-size:17px;">🚗 <span class="lang-es">Servicios Toyota</span><span class="lang-en">Toyota Services</span></h3>
+            <ul class="check-list">
+              <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+              <li><span class="lang-es">Copias</span><span class="lang-en">Key copies</span></li>
+              <li><span class="lang-es">Programación de llaves con chip</span><span class="lang-en">Chip key programming</span></li>
+              <li><span class="lang-es">Programación de smart key</span><span class="lang-en">Smart key programming</span></li>
+              <li><span class="lang-es">Reset / reprogramación ECU</span><span class="lang-en">ECU reset / reprogramming</span></li>
+              <li><span class="lang-es">Reparación de ignición</span><span class="lang-en">Ignition repair</span></li>
+              <li><span class="lang-es">Extracción de llaves rotas</span><span class="lang-en">Broken key extraction</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:12px;font-size:17px;">🚘 <span class="lang-es">Servicios Lexus</span><span class="lang-en">Lexus Services</span></h3>
+            <ul class="check-list">
+              <li><span class="lang-es">Programación de smart key</span><span class="lang-en">Smart key programming</span></li>
+              <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+              <li><span class="lang-es">Copias</span><span class="lang-en">Key copies</span></li>
+              <li><span class="lang-es">Reparación de controles</span><span class="lang-en">Remote repair</span></li>
+              <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="case-card"><div class="loc">📍 South Austin</div><p class="lang-es">Cliente perdió la única llave de Toyota.</p><p class="lang-en">Customer lost the only Toyota key.</p><p class="result lang-es">✅ Llave nueva programada en el lugar (~30 min)</p><p class="result lang-en">✅ New key programmed on the spot (~30 min)</p></div>
+          <div class="case-card"><div class="loc">📍 North Austin</div><p class="lang-es">Toyota sin ninguna llave.</p><p class="lang-en">Toyota with no key at all.</p><p class="result lang-es">✅ Decodificamos la cerradura y creamos llave desde cero.</p><p class="result lang-en">✅ We decoded the lock and created a key from scratch.</p></div>
+          <div class="case-card"><div class="loc">📍 Round Rock</div><p class="lang-es">Smart key no detectada. No era el carro — era la llave.</p><p class="lang-en">Smart key not detected. It wasn't the car — it was the key.</p><p class="result lang-es">✅ Solucionado sin reemplazos innecesarios.</p><p class="result lang-en">✅ Solved without unnecessary replacements.</p></div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <a href="tel:5127885155" class="btn btn-accent" style="font-size:16px;padding:16px 36px;">📞 (512) 788-5155</a>
+        </div>
+      </div>
+
+      <!-- NISSAN -->
+      <div class="brand-content" id="brand-nissan">
+        <div class="brand-hero">
+          <h2 id="nissan">🚗 Nissan / Infiniti</h2>
+          <p class="lang-es">Servicio móvil de llaves Nissan e Infiniti en Austin, TX</p>
+          <p class="lang-en">Mobile Nissan and Infiniti key service in Austin, TX</p>
+        </div>
+        <div class="grid-2" style="margin-bottom:24px;">
+          <div>
+            <div class="info-box" style="margin-bottom:16px;">
+              <div style="font-size:20px;">💡</div>
+              <div>
+                <strong><span class="lang-es">Empieza con lo Más Simple</span><span class="lang-en">Start Simple</span></strong>
+                <p style="font-size:14px;color:var(--text-light);margin-top:4px;">
+                  <span class="lang-es">Antes de pensar que es algo grave: cambia la batería de la llave e intenta arrancar otra vez.</span>
+                  <span class="lang-en">Before thinking it's serious: change the key battery and try to start again.</span>
+                </p>
+              </div>
+            </div>
+            <div class="tip-box" style="margin-bottom:16px;">
+              <div style="font-size:20px;">⚡</div>
+              <div>
+                <strong><span class="lang-es">Lo Que Mucha Gente No Sabe:</span><span class="lang-en">What Many People Don't Know:</span></strong>
+                <p style="font-size:14px;margin-top:4px;">
+                  <span class="lang-es">Aunque la batería esté muerta — acerca la llave directamente al botón de encendido. El carro puede detectarla por antena interna.</span>
+                  <span class="lang-en">Even with a dead battery — bring the key directly to the start button. The car can detect it via internal antenna.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Cómo Funciona el Sistema</span><span class="lang-en">How the System Works</span></h3>
+              <p style="font-size:14px;color:var(--text-light);">
+                <span class="lang-es">Los Nissan usan sistemas de smart key. El carro necesita detectar la señal de la llave. Si hay problema — eso NO siempre significa que algo está roto.</span>
+                <span class="lang-en">Nissans use smart key systems. The car needs to detect the key's signal. If there's a problem — that does NOT always mean something is broken.</span>
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="card" style="margin-bottom:16px;">
+              <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Problemas Comunes</span><span class="lang-en">Common Problems</span></h3>
+              <ul class="check-list">
+                <li>"Key not detected"</li>
+                <li><span class="lang-es">Push-to-start no funciona</span><span class="lang-en">Push-to-start not working</span></li>
+                <li><span class="lang-es">Batería de llave débil</span><span class="lang-en">Weak key battery</span></li>
+                <li><span class="lang-es">Llave perdida</span><span class="lang-en">Lost key</span></li>
+                <li><span class="lang-es">Control no responde</span><span class="lang-en">Remote not responding</span></li>
+                <li><span class="lang-es">Problemas intermitentes</span><span class="lang-en">Intermittent problems</span></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom:12px;font-size:17px;">🚘 <span class="lang-es">Servicios Nissan / Infiniti</span><span class="lang-en">Nissan / Infiniti Services</span></h3>
+              <ul class="check-list">
+                <li><span class="lang-es">Programación de smart key</span><span class="lang-en">Smart key programming</span></li>
+                <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+                <li><span class="lang-es">Copias</span><span class="lang-en">Key copies</span></li>
+                <li><span class="lang-es">Diagnóstico push-to-start</span><span class="lang-en">Push-to-start diagnostic</span></li>
+                <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="case-card"><div class="loc">📍 Round Rock</div><p class="lang-es">Cliente pensó que la batería del carro estaba muerta. Era la batería de la llave.</p><p class="lang-en">Customer thought the car battery was dead. It was the key battery.</p><p class="result lang-es">✅ Acercamos la llave al botón — arrancó al instante.</p><p class="result lang-en">✅ Brought the key to the button — started instantly.</p></div>
+          <div class="case-card"><div class="loc">📍 <span class="lang-es">Gasolinera Austin</span><span class="lang-en">Austin Gas Station</span></div><p class="lang-es">Cliente perdió la única llave.</p><p class="lang-en">Customer lost the only key.</p><p class="result lang-es">✅ Creamos y programamos nueva en ~30 minutos.</p><p class="result lang-en">✅ Created and programmed new key in ~30 min.</p></div>
+          <div class="case-card"><div class="loc">📍 South Austin</div><p class="lang-es">Push-to-start fallando a veces. Problema de señal.</p><p class="lang-en">Push-to-start failing sometimes. Signal problem.</p><p class="result lang-es">✅ Solucionado en la misma visita.</p><p class="result lang-en">✅ Solved in the same visit.</p></div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <a href="tel:5127885155" class="btn btn-accent" style="font-size:16px;padding:16px 36px;">📞 (512) 788-5155</a>
+        </div>
+      </div>
+
+      <!-- FORD -->
+      <div class="brand-content" id="brand-ford">
+        <div class="brand-hero">
+          <h2 id="ford">🚗 Ford / Lincoln</h2>
+          <p class="lang-es">Servicio móvil de llaves Ford y Lincoln en Austin, TX</p>
+          <p class="lang-en">Mobile Ford and Lincoln key service in Austin, TX</p>
+        </div>
+        <div class="grid-2" style="margin-bottom:24px;">
+          <div>
+            <div class="warning-box" style="margin-bottom:16px;">
+              <div class="wb-icon">⚠️</div>
+              <div>
+                <strong><span class="lang-es">Antes de Que se Bloquee por Completo</span><span class="lang-en">Before It Locks Completely</span></strong>
+                <p style="font-size:14px;color:var(--text-light);margin-top:4px;">
+                  <span class="lang-es">Si tu llave está dura o difícil de girar — no lo ignores. Es señal clara de desgaste en la ignición.</span>
+                  <span class="lang-en">If your key is stiff or hard to turn — don't ignore it. It's a clear sign of ignition wear.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Por Qué Fallan las Igniciones Ford</span><span class="lang-en">Why Ford Ignitions Fail</span></h3>
+              <ul class="step-list">
+                <li><div class="step-num">1</div><span class="lang-es">La ignición se desgasta internamente</span><span class="lang-en">Ignition wears internally</span></li>
+                <li><div class="step-num">2</div><span class="lang-es">La llave se debilita con el uso</span><span class="lang-en">Key weakens with use</span></li>
+                <li><div class="step-num">3</div><span class="lang-es">La alineación cambia</span><span class="lang-en">Alignment changes</span></li>
+                <li><div class="step-num">4</div><span class="lang-es">La llave se pone dura</span><span class="lang-en">Key becomes stiff</span></li>
+                <li><div class="step-num">5</div><span class="lang-es">Eventualmente deja de girar</span><span class="lang-en">Eventually stops turning</span></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="card" style="margin-bottom:16px;" style="background:#fff5f5;border:1px solid #fcc;">
+              <h3 style="margin-bottom:12px;font-size:17px;">❗ <span class="lang-es">Error Muy Común</span><span class="lang-en">Very Common Mistake</span></h3>
+              <p style="font-size:14px;color:var(--text-light);margin-bottom:10px;">
+                <span class="lang-es">Cuando la ignición se traba, muchas personas fuerzan la llave, intentan taladrar o arreglarlo sin experiencia.</span>
+                <span class="lang-en">When the ignition jams, many people force the key, try to drill, or fix it without experience.</span>
+              </p>
+              <div style="background:#fff0f0;border-radius:8px;padding:12px;">
+                <p style="font-size:13px;color:#c0392b;font-weight:600;">
+                  <span class="lang-es">⚠️ Esto puede causar daño total y necesidad de reemplazo completo. No la fuerces.</span>
+                  <span class="lang-en">⚠️ This can cause total damage and need for complete replacement. Don't force it.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom:12px;font-size:17px;">🚗 <span class="lang-es">Servicios Ford / Lincoln</span><span class="lang-en">Ford / Lincoln Services</span></h3>
+              <ul class="check-list">
+                <li><span class="lang-es">Reparación de ignición Ford</span><span class="lang-en">Ford ignition repair</span></li>
+                <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+                <li><span class="lang-es">Copias de llaves</span><span class="lang-en">Key copies</span></li>
+                <li><span class="lang-es">Programación de llaves con chip</span><span class="lang-en">Chip key programming</span></li>
+                <li><span class="lang-es">Extracción de llaves rotas</span><span class="lang-en">Broken key extraction</span></li>
+                <li><span class="lang-es">Smart key Lincoln</span><span class="lang-en">Lincoln smart key</span></li>
+                <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="case-card"><div class="loc">📍 Austin</div><p class="lang-es">Ford Focus — llave no giraba.</p><p class="lang-en">Ford Focus — key wouldn't turn.</p><p class="result lang-es">✅ Reparación de ignición en el lugar.</p><p class="result lang-en">✅ Ignition repair on the spot.</p></div>
+          <div class="case-card"><div class="loc">📍 North Austin</div><p class="lang-es">F-150 con llave rota dentro.</p><p class="lang-en">F-150 with broken key inside.</p><p class="result lang-es">✅ Sacamos la pieza, reparamos e hicimos nueva llave.</p><p class="result lang-en">✅ Extracted the piece, repaired and made new key.</p></div>
+          <div class="case-card"><div class="loc">📍 South Austin</div><p class="lang-es">Llave funcionaba a veces — ya estaba dañando la ignición.</p><p class="lang-en">Key worked sometimes — was already damaging the ignition.</p><p class="result lang-es">✅ Solucionado antes de que fallara completamente.</p><p class="result lang-en">✅ Solved before it failed completely.</p></div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <a href="tel:5127885155" class="btn btn-accent" style="font-size:16px;padding:16px 36px;">📞 (512) 788-5155</a>
+        </div>
+      </div>
+
+      <!-- DODGE -->
+      <div class="brand-content" id="brand-dodge">
+        <div class="brand-hero">
+          <h2 id="dodge">🚗 Dodge / Chrysler / Jeep</h2>
+          <p class="lang-es">Servicio móvil de llaves Dodge, Chrysler y Jeep en Austin, TX</p>
+          <p class="lang-en">Mobile Dodge, Chrysler and Jeep key service in Austin, TX</p>
+        </div>
+        <div class="grid-2" style="margin-bottom:24px;">
+          <div>
+            <div class="warning-box" style="margin-bottom:16px;">
+              <div class="wb-icon">⚠️</div>
+              <div>
+                <strong><span class="lang-es">Antes de Que Empeore</span><span class="lang-en">Before It Gets Worse</span></strong>
+                <p style="font-size:14px;color:var(--text-light);margin-top:4px;">
+                  <span class="lang-es">Si tu llave está dura o se queda atorada — no lo ignores. Esto normalmente es desgaste en la ignición.</span>
+                  <span class="lang-en">If your key is stiff or gets stuck — don't ignore it. This is usually ignition wear.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Problemas Comunes</span><span class="lang-en">Common Problems</span></h3>
+              <ul class="check-list">
+                <li><span class="lang-es">Llave atorada en la ignición</span><span class="lang-en">Key stuck in ignition</span></li>
+                <li><span class="lang-es">Ignición que no gira</span><span class="lang-en">Ignition that won't turn</span></li>
+                <li><span class="lang-es">Push-to-start que no responde</span><span class="lang-en">Push-to-start not responding</span></li>
+                <li>"Key not detected"</li>
+                <li><span class="lang-es">Llaves perdidas</span><span class="lang-en">Lost keys</span></li>
+                <li><span class="lang-es">Control que no funciona</span><span class="lang-en">Remote not working</span></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="card" style="margin-bottom:16px;">
+              <h3 style="margin-bottom:12px;font-size:17px;">🚗 <span class="lang-es">Servicios Dodge / Chrysler</span><span class="lang-en">Dodge / Chrysler Services</span></h3>
+              <ul class="check-list">
+                <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+                <li><span class="lang-es">Programación de smart key</span><span class="lang-en">Smart key programming</span></li>
+                <li><span class="lang-es">Reparación de ignición</span><span class="lang-en">Ignition repair</span></li>
+                <li><span class="lang-es">Extracción de llaves rotas</span><span class="lang-en">Broken key extraction</span></li>
+                <li><span class="lang-es">Copias de llaves</span><span class="lang-en">Key copies</span></li>
+                <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom:12px;font-size:17px;">🚘 Jeep <span class="lang-es">Servicios</span><span class="lang-en">Services</span></h3>
+              <ul class="check-list">
+                <li><span class="lang-es">Reemplazo de llaves Jeep</span><span class="lang-en">Jeep key replacement</span></li>
+                <li><span class="lang-es">Programación de smart key</span><span class="lang-en">Smart key programming</span></li>
+                <li><span class="lang-es">Reparación de ignición</span><span class="lang-en">Ignition repair</span></li>
+                <li><span class="lang-es">Copias</span><span class="lang-en">Key copies</span></li>
+                <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="case-card"><div class="loc">📍 Austin</div><p class="lang-es">Dodge Ram — llave atorada en ignición.</p><p class="lang-en">Dodge Ram — key stuck in ignition.</p><p class="result lang-es">✅ Extracción y reparación en el lugar.</p><p class="result lang-en">✅ Extraction and repair on the spot.</p></div>
+          <div class="case-card"><div class="loc">📍 Round Rock</div><p class="lang-es">Jeep Cherokee — push-to-start no funcionaba.</p><p class="lang-en">Jeep Cherokee — push-to-start not working.</p><p class="result lang-es">✅ Diagnóstico y solución en ~35 minutos.</p><p class="result lang-en">✅ Diagnosis and solution in ~35 min.</p></div>
+          <div class="case-card"><div class="loc">📍 North Austin</div><p class="lang-es">Chrysler 300 — llave perdida.</p><p class="lang-en">Chrysler 300 — lost key.</p><p class="result lang-es">✅ Nueva llave programada en el lugar.</p><p class="result lang-en">✅ New key programmed on the spot.</p></div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <a href="tel:5127885155" class="btn btn-accent" style="font-size:16px;padding:16px 36px;">📞 (512) 788-5155</a>
+        </div>
+      </div>
+
+      <!-- CHEVY -->
+      <div class="brand-content" id="brand-chevy">
+        <div class="brand-hero">
+          <h2 id="chevy">🚗 Chevrolet / GMC</h2>
+          <p class="lang-es">Servicio móvil de llaves Chevrolet y GMC en Austin, TX</p>
+          <p class="lang-en">Mobile Chevrolet and GMC key service in Austin, TX</p>
+        </div>
+        <div class="grid-2" style="margin-bottom:24px;">
+          <div>
+            <div class="info-box" style="margin-bottom:16px;">
+              <div style="font-size:20px;">💡</div>
+              <div>
+                <strong><span class="lang-es">Sistemas GM</span><span class="lang-en">GM Systems</span></strong>
+                <p style="font-size:14px;color:var(--text-light);margin-top:4px;">
+                  <span class="lang-es">Chevrolet y GMC usan sistemas similares. Muchos modelos tienen PASS-Key o inmovilizador VATS.</span>
+                  <span class="lang-en">Chevrolet and GMC use similar systems. Many models have PASS-Key or VATS immobilizer.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Problemas Comunes</span><span class="lang-en">Common Problems</span></h3>
+              <ul class="check-list">
+                <li><span class="lang-es">Llave no girando</span><span class="lang-en">Key not turning</span></li>
+                <li><span class="lang-es">Ignición atorada</span><span class="lang-en">Ignition stuck</span></li>
+                <li><span class="lang-es">Llave perdida</span><span class="lang-en">Lost key</span></li>
+                <li><span class="lang-es">Problemas de inmovilizador</span><span class="lang-en">Immobilizer problems</span></li>
+                <li><span class="lang-es">Smart key no detectada</span><span class="lang-en">Smart key not detected</span></li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="card" style="margin-bottom:16px;">
+              <h3 style="margin-bottom:12px;font-size:17px;">🚗 <span class="lang-es">Servicios Chevrolet</span><span class="lang-en">Chevrolet Services</span></h3>
+              <ul class="check-list">
+                <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+                <li><span class="lang-es">Reparación de ignición</span><span class="lang-en">Ignition repair</span></li>
+                <li><span class="lang-es">Programación de chip</span><span class="lang-en">Chip programming</span></li>
+                <li><span class="lang-es">Copias de llaves</span><span class="lang-en">Key copies</span></li>
+                <li><span class="lang-es">Extracción de llaves rotas</span><span class="lang-en">Broken key extraction</span></li>
+                <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom:12px;font-size:17px;">🚘 <span class="lang-es">Servicios GMC</span><span class="lang-en">GMC Services</span></h3>
+              <ul class="check-list">
+                <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+                <li><span class="lang-es">Reparación de ignición</span><span class="lang-en">Ignition repair</span></li>
+                <li><span class="lang-es">Programación de smart key</span><span class="lang-en">Smart key programming</span></li>
+                <li><span class="lang-es">Copias</span><span class="lang-en">Key copies</span></li>
+                <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="case-card"><div class="loc">📍 Austin</div><p class="lang-es">Silverado — llave no giraba.</p><p class="lang-en">Silverado — key wouldn't turn.</p><p class="result lang-es">✅ Reparación de ignición en el lugar.</p><p class="result lang-en">✅ Ignition repair on the spot.</p></div>
+          <div class="case-card"><div class="loc">📍 Round Rock</div><p class="lang-es">GMC Sierra — llave perdida.</p><p class="lang-en">GMC Sierra — lost key.</p><p class="result lang-es">✅ Nueva llave programada en ~30 minutos.</p><p class="result lang-en">✅ New key programmed in ~30 min.</p></div>
+          <div class="case-card"><div class="loc">📍 South Austin</div><p class="lang-es">Chevy Malibu — problemas de inmovilizador.</p><p class="lang-en">Chevy Malibu — immobilizer problems.</p><p class="result lang-es">✅ Diagnóstico y solución sin reemplazos.</p><p class="result lang-en">✅ Diagnosis and solution without replacements.</p></div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <a href="tel:5127885155" class="btn btn-accent" style="font-size:16px;padding:16px 36px;">📞 (512) 788-5155</a>
+        </div>
+      </div>
+
+      <!-- HYUNDAI -->
+      <div class="brand-content" id="brand-hyundai">
+        <div class="brand-hero">
+          <h2 id="hyundai">🚗 Hyundai / Kia</h2>
+          <p class="lang-es">Servicio móvil de llaves Hyundai y Kia en Austin, TX</p>
+          <p class="lang-en">Mobile Hyundai and Kia key service in Austin, TX</p>
+        </div>
+        <div class="grid-2" style="margin-bottom:24px;">
+          <div>
+            <div class="warning-box" style="margin-bottom:16px;">
+              <div class="wb-icon">⚠️</div>
+              <div>
+                <strong><span class="lang-es">"Key Not Detected" — No Siempre es Grave</span><span class="lang-en">"Key Not Detected" — Not Always Serious</span></strong>
+                <p style="font-size:14px;color:var(--text-light);margin-top:4px;">
+                  <span class="lang-es">Este mensaje aparece mucho en Hyundai/Kia. Normalmente es batería de la llave o problema de señal.</span>
+                  <span class="lang-en">This message appears often in Hyundai/Kia. Usually it's key battery or signal problem.</span>
+                </p>
+              </div>
+            </div>
+            <div class="tip-box" style="margin-bottom:16px;">
+              <div style="font-size:20px;">⚡</div>
+              <div>
+                <strong><span class="lang-es">Tip de Emergencia:</span><span class="lang-en">Emergency Tip:</span></strong>
+                <p style="font-size:14px;margin-top:4px;">
+                  <span class="lang-es">Si el carro no detecta la llave: acércala directamente al botón de encendido. El sistema puede detectarla por antena interna.</span>
+                  <span class="lang-en">If the car doesn't detect the key: bring it directly to the start button. The system can detect it via internal antenna.</span>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Sistemas Modernos</span><span class="lang-en">Modern Systems</span></h3>
+              <p style="font-size:14px;color:var(--text-light);">
+                <span class="lang-es">Hyundai/Kia usan sistemas push-to-start avanzados. Son sensibles pero reparables.</span>
+                <span class="lang-en">Hyundai/Kia use advanced push-to-start systems. They're sensitive but repairable.</span>
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="card" style="margin-bottom:16px;">
+              <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Problemas Comunes</span><span class="lang-en">Common Problems</span></h3>
+              <ul class="check-list">
+                <li>"Key not detected"</li>
+                <li><span class="lang-es">Push-to-start no funciona</span><span class="lang-en">Push-to-start not working</span></li>
+                <li><span class="lang-es">Batería de llave débil</span><span class="lang-en">Weak key battery</span></li>
+                <li><span class="lang-es">Llave perdida</span><span class="lang-en">Lost key</span></li>
+                <li><span class="lang-es">Control no responde</span><span class="lang-en">Remote not responding</span></li>
+                <li><span class="lang-es">Problemas intermitentes</span><span class="lang-en">Intermittent problems</span></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom:12px;font-size:17px;">🚗 <span class="lang-es">Servicios Hyundai / Kia</span><span class="lang-en">Hyundai / Kia Services</span></h3>
+              <ul class="check-list">
+                <li><span class="lang-es">Programación de smart key</span><span class="lang-en">Smart key programming</span></li>
+                <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+                <li><span class="lang-es">Copias</span><span class="lang-en">Key copies</span></li>
+                <li><span class="lang-es">Diagnóstico push-to-start</span><span class="lang-en">Push-to-start diagnostic</span></li>
+                <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="case-card"><div class="loc">📍 Austin</div><p class="lang-es">Hyundai Elantra — "key not detected".</p><p class="lang-en">Hyundai Elantra — "key not detected".</p><p class="result lang-es">✅ Era la batería — solucionado en 5 minutos.</p><p class="result lang-en">✅ It was the battery — solved in 5 minutes.</p></div>
+          <div class="case-card"><div class="loc">📍 Round Rock</div><p class="lang-es">Kia Sportage — push-to-start fallando.</p><p class="lang-en">Kia Sportage — push-to-start failing.</p><p class="result lang-es">✅ Diagnóstico y reparación en el lugar.</p><p class="result lang-en">✅ Diagnosis and repair on the spot.</p></div>
+          <div class="case-card"><div class="loc">📍 North Austin</div><p class="lang-es">Cliente perdió la única llave de Hyundai.</p><p class="lang-en">Customer lost the only Hyundai key.</p><p class="result lang-es">✅ Nueva llave programada en ~35 minutos.</p><p class="result lang-en">✅ New key programmed in ~35 min.</p></div>
+        </div>
+        <div style="text-align:center;margin-top:32px;">
+          <a href="tel:5127885155" class="btn btn-accent" style="font-size:16px;padding:16px 36px;">📞 (512) 788-5155</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FLOATING PHONE -->
+<div class="float-phone">
+  <a href="tel:5127885155">📞 (512) 788-5155</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <img src="assets/images/logo.webp" alt="Austin Car Key & Ignition" style="height: 50px; width: auto; background: white; padding: 10px; border-radius: 10px;">
+        </div>
+        <p style="font-size:14px;line-height:1.7;"><span class="lang-es">Servicio móvil de llaves de carro y reparación de ignición en Austin, TX. Sin grúa. Sin concesionario.</span><span class="lang-en">Mobile car key service and ignition repair in Austin, TX. No tow truck. No dealership.</span></p>
+        <p style="margin-top:12px;font-size:14px;">📍 1803 W 35th St STE D, Austin, TX 78703</p>
+        <p style="margin-top:4px;font-size:14px;">📞 <a href="tel:5127885155">(512) 788-5155</a></p>
+      </div>
+      <div>
+        <h4><span class="lang-es">Servicios</span><span class="lang-en">Services</span></h4>
+        <ul style="list-style:none;line-height:2.2;">
+          <li><a href="#honda" style="cursor:pointer;">Honda / Acura</a></li>
+          <li><a href="#toyota" style="cursor:pointer;">Toyota / Lexus</a></li>
+          <li><a href="#nissan" style="cursor:pointer;">Nissan / Infiniti</a></li>
+          <li><a href="#ford" style="cursor:pointer;">Ford / Lincoln</a></li>
+          <li><a href="#dodge" style="cursor:pointer;">Dodge / Chrysler / Jeep</a></li>
+          <li><a href="#chevy" style="cursor:pointer;">Chevrolet / GMC</a></li>
+          <li><a href="#hyundai" style="cursor:pointer;">Hyundai / Kia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-es">Navegación</span><span class="lang-en">Navigation</span></h4>
+        <ul style="list-style:none;line-height:2.4;">
+          <li><a href="index.html" style="cursor:pointer;"><span class="lang-es">Inicio</span><span class="lang-en">Home</span></a></li>
+          <li><a href="about.html" style="cursor:pointer;"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a></li>
+          <li><a href="contact.html" style="cursor:pointer;"><span class="lang-es">Contacto</span><span class="lang-en">Contact Us</span></a></li>
+          <li><a href="faq.html" style="cursor:pointer;">FAQ</a></li>
+          <li><a href="reviews.html" style="cursor:pointer;"><span class="lang-es">Reseñas</span><span class="lang-en">Reviews</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-es">Áreas de Servicio</span><span class="lang-en">Service Areas</span></h4>
+        <ul style="list-style:none;line-height:2.2;font-size:14px;">
+          <li>📍 Austin</li>
+          <li>📍 North / South / East / West Austin</li>
+          <li>📍 Round Rock</li>
+          <li>📍 Cedar Park</li>
+          <li>📍 Pflugerville</li>
+          <li>📍 Georgetown</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Austin Car Key & Ignition. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></span>
+      <a href="http://austincarkeyandignition.com/">austincarkeyandignition.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

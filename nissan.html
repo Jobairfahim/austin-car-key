@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Servicio de llaves Nissan e Infiniti en Austin, TX - Reemplazo, programación, reparación de push-to-start">
+<title>Nissan / Infiniti - Austin Car Key & Ignition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="assets/images/logo.ico">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- TRANSLATE BAR -->
+<div class="translate-bar">
+  <div class="container">
+    <span class="lang-es">🌐 Idioma:</span>
+    <span class="lang-en">🌐 Language:</span>
+    <button class="lang-btn active" id="btnEs" onclick="setLang('es')">Español</button>
+    <button class="lang-btn" id="btnEn" onclick="setLang('en')">English</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="assets/images/logo.webp" alt="Austin Car Key & Ignition" style="height: 60px; width: auto; background: white; padding: 10px; border-radius: 10px;">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">
+        <span class="lang-es">Inicio</span>
+        <span class="lang-en">Home</span>
+      </a>
+      <div class="dropdown">
+        <div class="nav-item">
+          <span class="lang-es">Servicios</span>
+          <span class="lang-en">Services</span>
+          ▾
+        </div>
+        <div class="dropdown-menu">
+          <a href="honda.html"><span class="dm-icon">🚗</span> Honda / Acura</a>
+          <a href="toyota.html"><span class="dm-icon">🚗</span> Toyota / Lexus</a>
+          <a href="nissan.html" class="active"><span class="dm-icon">🚗</span> Nissan / Infiniti</a>
+          <a href="ford.html"><span class="dm-icon">🚗</span> Ford / Lincoln</a>
+          <a href="dodge.html"><span class="dm-icon">🚗</span> Dodge / Chrysler / Jeep</a>
+          <a href="chevy.html"><span class="dm-icon">🚗</span> Chevrolet / GMC</a>
+          <a href="hyundai.html"><span class="dm-icon">🚗</span> Hyundai / Kia</a>
+        </div>
+      </div>
+      <a href="about.html">
+        <span class="lang-es">Nosotros</span>
+        <span class="lang-en">About</span>
+      </a>
+      <a href="contact.html">
+        <span class="lang-es">Contacto</span>
+        <span class="lang-en">Contact Us</span>
+      </a>
+      <a href="faq.html">FAQ</a>
+      <a href="reviews.html">
+        <span class="lang-es">Reseñas</span>
+        <span class="lang-en">Reviews</span>
+      </a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:5127885155" class="nav-phone">📞 (512) 788-5155</a>
+      <a href="tel:5127885155" class="btn btn-accent">
+        <span class="lang-es">Llamar Ahora</span>
+        <span class="lang-en">Call Now</span>
+      </a>
+    </div>
+    <div class="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" onclick="closeMobileIfBg(event)">
+  <div class="mobile-panel">
+    <button class="close-btn" onclick="toggleMobile()">✕</button>
+    <br>
+    <a href="index.html" onclick="toggleMobile()"><span class="lang-es">🏠 Inicio</span><span class="lang-en">🏠 Home</span></a>
+    <div class="mob-nav-item" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">
+      <span class="lang-es">🔧 Servicios ▾</span>
+      <span class="lang-en">🔧 Services ▾</span>
+    </div>
+    <div style="display:none">
+      <a class="mob-sub" href="honda.html" onclick="toggleMobile()">Honda / Acura</a>
+      <a class="mob-sub" href="toyota.html" onclick="toggleMobile()">Toyota / Lexus</a>
+      <a class="mob-sub" href="nissan.html" onclick="toggleMobile()">Nissan / Infiniti</a>
+      <a class="mob-sub" href="ford.html" onclick="toggleMobile()">Ford / Lincoln</a>
+      <a class="mob-sub" href="dodge.html" onclick="toggleMobile()">Dodge / Chrysler / Jeep</a>
+      <a class="mob-sub" href="chevy.html" onclick="toggleMobile()">Chevrolet / GMC</a>
+      <a class="mob-sub" href="hyundai.html" onclick="toggleMobile()">Hyundai / Kia</a>
+    </div>
+    <a href="about.html" onclick="toggleMobile()"><span class="lang-es">ℹ️ Nosotros</span><span class="lang-en">ℹ️ About</span></a>
+    <a href="contact.html" onclick="toggleMobile()"><span class="lang-es">📞 Contacto</span><span class="lang-en">📞 Contact Us</span></a>
+    <a href="faq.html" onclick="toggleMobile()">❓ FAQ</a>
+    <a href="reviews.html" onclick="toggleMobile()"><span class="lang-es">⭐ Reseñas</span><span class="lang-en">⭐ Reviews</span></a>
+    <br>
+    <a href="tel:5127885155" class="btn btn-accent" style="width:100%;justify-content:center;margin-top:10px;">📞 (512) 788-5155</a>
+  </div>
+</div>
+
+<main>
+  <section style="background:var(--primary);padding:48px 0 32px;">
+    <div class="container">
+      <div class="badge badge-accent" style="margin-bottom:12px;"><span class="lang-es">Servicios por Marca</span><span class="lang-en">Services by Brand</span></div>
+      <h1 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);">🚗 Nissan / Infiniti</h1>
+      <p style="color:rgba(255,255,255,0.8);margin-top:8px;"><span class="lang-es">Servicio móvil de llaves Nissan e Infiniti en Austin, TX</span><span class="lang-en">Mobile Nissan and Infiniti key service in Austin, TX</span></p>
+    </div>
+  </section>
+
+  <!-- NO GRUA -->
+  <section class="section-sm" style="background:var(--bg2);">
+    <div class="container">
+      <div class="text-center section-heading center">
+        <h2><span class="lang-es">Sin Grúa. Sin Concesionario.</span><span class="lang-en">No Tow Truck. No Dealership.</span></h2>
+        <p><span class="lang-es">Nosotros vamos a tu ubicación en Austin y resolvemos el problema en el momento.</span><span class="lang-en">We come to your location in Austin and solve the problem on the spot.</span></p>
+      </div>
+      <div class="grid-4">
+        <div class="card text-center" style="padding:24px;">
+          <div style="font-size:36px;margin-bottom:10px;">🏠</div>
+          <div style="font-weight:600;"><span class="lang-es">Casa</span><span class="lang-en">Home</span></div>
+        </div>
+        <div class="card text-center" style="padding:24px;">
+          <div style="font-size:36px;margin-bottom:10px;">💼</div>
+          <div style="font-weight:600;"><span class="lang-es">Trabajo</span><span class="lang-en">Work</span></div>
+        </div>
+        <div class="card text-center" style="padding:24px;">
+          <div style="font-size:36px;margin-bottom:10px;">🅿️</div>
+          <div style="font-weight:600;"><span class="lang-es">Estacionamiento</span><span class="lang-en">Parking Lot</span></div>
+        </div>
+        <div class="card text-center" style="padding:24px;">
+          <div style="font-size:36px;margin-bottom:10px;">⛽</div>
+          <div style="font-weight:600;"><span class="lang-es">Gasolinera</span><span class="lang-en">Gas Station</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="badge badge-primary" style="margin-bottom:10px;"><span class="lang-es">Nuestros Servicios</span><span class="lang-en">Our Services</span></div>
+        <h2><span class="lang-es">¿Qué Podemos Hacer Por Ti?</span><span class="lang-en">What Can We Do For You?</span></h2>
+        <p><span class="lang-es">Desde llaves perdidas hasta reparación de ignición — todo en el lugar.</span><span class="lang-en">From lost keys to ignition repair — all on the spot.</span></p>
+      </div>
+      <div class="grid-3">
+        <div class="service-card" onclick="location.href='honda.html'">
+          <div class="icon">🔑</div>
+          <h3><span class="lang-es">Reemplazo de Llaves</span><span class="lang-en">Key Replacement</span></h3>
+          <p><span class="lang-es">Llaves perdidas, copias, programación de llaves inteligentes y push-to-start.</span><span class="lang-en">Lost keys, copies, smart key programming and push-to-start.</span></p>
+        </div>
+        <div class="service-card" onclick="location.href='ford.html'">
+          <div class="icon">🔧</div>
+          <h3><span class="lang-es">Reparación de Ignición</span><span class="lang-en">Ignition Repair</span></h3>
+          <p><span class="lang-es">Ignición dura, atorada o bloqueada. Reparamos sin reemplazos innecesarios.</span><span class="lang-en">Stiff, stuck or blocked ignition. We repair without unnecessary replacements.</span></p>
+        </div>
+        <div class="service-card" onclick="location.href='toyota.html'">
+          <div class="icon">📡</div>
+          <h3><span class="lang-es">Programación de Chip</span><span class="lang-en">Chip Programming</span></h3>
+          <p><span class="lang-es">Programación de llaves con chip, smart keys y controles remotos.</span><span class="lang-en">Programming of chip keys, smart keys and remote controls.</span></p>
+        </div>
+        <div class="service-card" onclick="location.href='dodge.html'">
+          <div class="icon">🚗</div>
+          <h3><span class="lang-es">Lockout / Auto Cerrado</span><span class="lang-en">Lockout / Car Locked</span></h3>
+          <p><span class="lang-es">Llave dentro del carro. Te abrimos sin daño al vehículo.</span><span class="lang-en">Key inside the car. We open it without damage to the vehicle.</span></p>
+        </div>
+        <div class="service-card" onclick="location.href='chevy.html'">
+          <div class="icon">🔩</div>
+          <h3><span class="lang-es">Extracción de Llaves Rotas</span><span class="lang-en">Broken Key Extraction</span></h3>
+          <p><span class="lang-es">Llave rota dentro de la ignición o cerradura. La extraemos con herramientas especializadas.</span><span class="lang-en">Broken key inside ignition or lock. We extract it with specialized tools.</span></p>
+        </div>
+        <div class="service-card" onclick="location.href='nissan.html'">
+          <div class="icon">🔄</div>
+          <h3><span class="lang-es">Push-to-Start</span><span class="lang-en">Push-to-Start</span></h3>
+          <p><span class="lang-es">El botón de encendido no responde. Diagnosticamos y solucionamos en el lugar.</span><span class="lang-en">Start button not responding. We diagnose and solve on the spot.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGNOSIS -->
+  <section class="section" style="background:var(--bg2);">
+    <div class="container">
+      <div class="section-heading center text-center">
+        <div class="badge badge-accent" style="margin-bottom:10px;"><span class="lang-es">Diagnóstico Real</span><span class="lang-en">Real Diagnosis</span></div>
+        <h2><span class="lang-es">Esto Hace la Diferencia</span><span class="lang-en">This Makes the Difference</span></h2>
+        <p><span class="lang-es">Muchos problemas parecen iguales pero pueden ser cosas totalmente diferentes.</span><span class="lang-en">Many problems look the same but can be completely different things.</span></p>
+      </div>
+      <div class="grid-2" style="max-width:800px;margin:0 auto;">
+        <div>
+          <div class="diag-item">
+            <div class="di-header">❓ <span class="lang-es">"No arranca"</span><span class="lang-en">"Won't start"</span></div>
+            <div style="font-size:13px;color:var(--text-light);">
+              <span class="lang-es">Puede ser: Batería de la llave · Señal · Llave desgastada · Ignición · Programación</span>
+              <span class="lang-en">Could be: Key battery · Signal · Worn key · Ignition · Programming</span>
+            </div>
+          </div>
+          <div class="diag-arrow">↓</div>
+          <div class="diag-item">
+            <div class="di-header">❓ <span class="lang-es">"La llave no gira"</span><span class="lang-en">"Key won't turn"</span></div>
+            <div style="font-size:13px;color:var(--text-light);">
+              <span class="lang-es">Puede ser: Llave desgastada · Ignición dañada · Llave rota · Desgaste interno</span>
+              <span class="lang-en">Could be: Worn key · Damaged ignition · Broken key · Internal wear</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;">
+          <div style="background:var(--card-bg);border-radius:var(--radius);padding:28px;border:2px solid var(--accent);text-align:center;">
+            <div style="font-size:40px;margin-bottom:12px;">🔍</div>
+            <h3 style="margin-bottom:8px;"><span class="lang-es">Nosotros Diagnosticamos Primero</span><span class="lang-en">We Diagnose First</span></h3>
+            <p style="font-size:14px;color:var(--text-light);"><span class="lang-es">Si alguien no revisa bien — puedes pagar por algo que no necesitas. Nosotros arreglamos el problema real.</span><span class="lang-en">If someone doesn't check properly — you could pay for something you don't need. We fix the real problem.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL CASES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="badge badge-primary" style="margin-bottom:10px;"><span class="lang-es">Casos Reales</span><span class="lang-en">Real Cases</span></div>
+        <h2><span class="lang-es">Casos Reales en Austin</span><span class="lang-en">Real Cases in Austin</span></h2>
+      </div>
+      <div class="grid-2">
+        <div class="case-card">
+          <div class="loc">📍 The Domain – Austin</div>
+          <p class="lang-es">Cliente dejó las llaves dentro del carro.</p>
+          <p class="lang-en">Customer left keys inside the car.</p>
+          <p class="result lang-es">✅ Llegamos en ~25 minutos, abrimos sin daño e hicimos una llave extra en el lugar.</p>
+          <p class="result lang-en">✅ Arrived in ~25 min, opened without damage and made a spare key on the spot.</p>
+        </div>
+        <div class="case-card">
+          <div class="loc">📍 South Austin</div>
+          <p class="lang-es">Llave de Honda no giraba. Le dijeron que necesitaba ignición nueva.</p>
+          <p class="lang-en">Honda key wouldn't turn. Was told he needed a new ignition.</p>
+          <p class="result lang-es">✅ La reparamos el mismo día.</p>
+          <p class="result lang-en">✅ We repaired it the same day.</p>
+        </div>
+        <div class="case-card">
+          <div class="loc">📍 Round Rock</div>
+          <p class="lang-es">Cliente perdió la única llave.</p>
+          <p class="lang-en">Customer lost the only key.</p>
+          <p class="result lang-es">✅ Creamos y programamos una nueva en ~30 minutos.</p>
+          <p class="result lang-en">✅ Created and programmed a new one in ~30 minutes.</p>
+        </div>
+        <div class="case-card">
+          <div class="loc">📍 North Austin</div>
+          <p class="lang-es">El cliente pensaba que el carro tenía un problema grave.</p>
+          <p class="lang-en">Customer thought the car had a serious problem.</p>
+          <p class="result lang-es">✅ Era la llave — no el carro.</p>
+          <p class="result lang-en">✅ It was the key — not the car.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMON PROBLEMS -->
+  <section class="section" style="background:var(--bg2);">
+    <div class="container">
+      <div class="section-heading center text-center">
+        <h2><span class="lang-es">Problemas Comunes Que Solucionamos</span><span class="lang-en">Common Problems We Solve</span></h2>
+      </div>
+      <div style="max-width:700px;margin:0 auto;">
+        <div class="grid-2">
+          <ul class="check-list">
+            <li><span class="lang-es">Llaves perdidas</span><span class="lang-en">Lost keys</span></li>
+            <li><span class="lang-es">Llave no detectada</span><span class="lang-en">Key not detected</span></li>
+            <li><span class="lang-es">Push-to-start no funciona</span><span class="lang-en">Push-to-start not working</span></li>
+            <li><span class="lang-es">Llave rota</span><span class="lang-en">Broken key</span></li>
+            <li><span class="lang-es">Llave atorada en ignición</span><span class="lang-en">Key stuck in ignition</span></li>
+          </ul>
+          <ul class="check-list">
+            <li><span class="lang-es">Ignición que no gira</span><span class="lang-en">Ignition that won't turn</span></li>
+            <li><span class="lang-es">Control que no funciona</span><span class="lang-en">Remote not working</span></li>
+            <li><span class="lang-es">Carro no arranca</span><span class="lang-en">Car won't start</span></li>
+            <li><span class="lang-es">Lockout (auto cerrado)</span><span class="lang-en">Lockout (car locked)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS SERVED -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading center text-center">
+        <h2><span class="lang-es">Trabajamos con Todas las Marcas</span><span class="lang-en">We Work with All Brands</span></h2>
+        <p><span class="lang-es">Cada carro es diferente — y eso importa.</span><span class="lang-en">Every car is different — and that matters.</span></p>
+      </div>
+      <div style="text-align:center;margin-top:8px;">
+        <span class="tag" onclick="location.href='honda.html'" style="cursor:pointer;">Honda / Acura</span>
+        <span class="tag" onclick="location.href='toyota.html'" style="cursor:pointer;">Toyota / Lexus</span>
+        <span class="tag" onclick="location.href='nissan.html'" style="cursor:pointer;">Nissan / Infiniti</span>
+        <span class="tag" onclick="location.href='ford.html'" style="cursor:pointer;">Ford / Lincoln</span>
+        <span class="tag" onclick="location.href='hyundai.html'" style="cursor:pointer;">Hyundai / Kia</span>
+        <span class="tag" onclick="location.href='chevy.html'" style="cursor:pointer;">Chevrolet / GMC</span>
+        <span class="tag" onclick="location.href='dodge.html'" style="cursor:pointer;">Dodge / Chrysler / Jeep</span>
+      </div>
+      <div style="text-align:center;margin-top:24px;">
+        <a href="honda.html" class="btn btn-primary">
+          <span class="lang-es">Ver Servicios por Marca</span>
+          <span class="lang-en">View Services by Brand</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section class="section" style="background:var(--bg2);">
+    <div class="container">
+      <div class="section-heading center text-center">
+        <h2><span class="lang-es">Áreas de Servicio</span><span class="lang-en">Service Areas</span></h2>
+      </div>
+      <div style="text-align:center;">
+        <span class="area-chip">📍 Austin</span>
+        <span class="area-chip">📍 North Austin</span>
+        <span class="area-chip">📍 South Austin</span>
+        <span class="area-chip">📍 East Austin</span>
+        <span class="area-chip">📍 West Austin</span>
+        <span class="area-chip">📍 Round Rock</span>
+        <span class="area-chip">📍 Cedar Park</span>
+        <span class="area-chip">📍 Pflugerville</span>
+        <span class="area-chip">📍 Georgetown</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="margin-bottom:24px;">
+        <div>
+          <div class="info-box" style="margin-bottom:16px;">
+            <div style="font-size:20px;">💡</div>
+            <div>
+              <strong><span class="lang-es">Empieza con lo Más Simple (Muy Importante)</span><span class="lang-en">Start with the Simple (Very Important)</span></strong>
+              <p style="font-size:14px;color:var(--text-light);margin-top:4px;">
+                <span class="lang-es">Antes de pensar que es algo grave: cambia la batería de la llave e intenta arrancar otra vez.</span>
+                <span class="lang-en">Before thinking it's serious: change the key battery and try to start again.</span>
+              </p>
+              <p style="font-size:14px;color:var(--text-light);">
+                <span class="lang-es">Una batería débil es una de las causas más comunes</span>
+                <span class="lang-en">A weak battery is one of the most common causes</span>
+              </p>
+            </div>
+          </div>
+          <div class="tip-box" style="margin-bottom:16px;">
+            <div style="font-size:20px;">⚡</div>
+            <div>
+              <strong><span class="lang-es">Algo Que Mucha Gente No Sabe</span><span class="lang-en">Something Many People Don't Know</span></strong>
+              <p style="font-size:14px;margin-top:4px;">
+                <span class="lang-es">Aunque la batería esté muerta:</span>
+                <span class="lang-en">Even with a dead battery:</span>
+              </p>
+              <p style="font-size:14px;margin-top:4px;">
+                <span class="lang-es">Puedes arrancar muchos Nissan así:</span>
+                <span class="lang-en">You can start many Nissans like this:</span>
+              </p>
+              <p style="font-size:14px;margin-top:4px;">
+                <span class="lang-es">➡ Acerca la llave directamente al botón de encendido</span>
+                <span class="lang-en">➡ Bring the key directly to the start button</span>
+              </p>
+              <p style="font-size:14px;margin-top:4px;">
+                <span class="lang-es">El carro puede detectarla por antena interna</span>
+                <span class="lang-en">The car can detect it via internal antenna</span>
+              </p>
+              <p style="font-size:14px;margin-top:4px;">
+                <span class="lang-es">Esto puede salvarte en el momento</span>
+                <span class="lang-en">This can save you in the moment</span>
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Cómo Funciona el Sistema</span><span class="lang-en">How the System Works</span></h3>
+            <p style="font-size:14px;color:var(--text-light);">
+              <span class="lang-es">Los Nissan usan sistemas de smart key. El carro necesita detectar la señal de la llave. Si hay problema:</span>
+              <span class="lang-en">Nissans use smart key systems. The car needs to detect the key's signal. If there's a problem:</span>
+            </p>
+            <ul style="font-size:14px;color:var(--text-light);margin-top:8px;list-style-type:disc;margin-left:20px;">
+              <li><span class="lang-es">No detecta la llave</span><span class="lang-en">Doesn't detect the key</span></li>
+              <li><span class="lang-es">No responde el botón</span><span class="lang-en">Button doesn't respond</span></li>
+              <li><span class="lang-es">No arranca</span><span class="lang-en">Doesn't start</span></li>
+            </ul>
+            <p style="font-size:14px;color:var(--text-light);margin-top:8px;">
+              <span class="lang-es">Eso NO siempre significa que algo está roto</span>
+              <span class="lang-en">That does NOT always mean something is broken</span>
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:16px;">
+            <h3 style="margin-bottom:12px;font-size:17px;"><span class="lang-es">Problemas Comunes</span><span class="lang-en">Common Problems</span></h3>
+            <ul class="check-list">
+              <li><span class="lang-es">"Key not detected"</span><span class="lang-en">"Key not detected"</span></li>
+              <li><span class="lang-es">Push-to-start no funciona</span><span class="lang-en">Push-to-start not working</span></li>
+              <li><span class="lang-es">Batería de llave débil</span><span class="lang-en">Weak key battery</span></li>
+              <li><span class="lang-es">Llave perdida</span><span class="lang-en">Lost key</span></li>
+              <li><span class="lang-es">Control no responde</span><span class="lang-en">Remote doesn't respond</span></li>
+              <li><span class="lang-es">Problemas intermitentes</span><span class="lang-en">Intermittent problems</span></li>
+            </ul>
+            <p style="font-size:14px;color:var(--text-light);margin-top:12px;">
+              <span class="lang-es">Algunos pasan sin aviso</span>
+              <span class="lang-en">Some happen without warning</span>
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:12px;font-size:17px;">🚘 <span class="lang-es">Servicios Nissan / Infiniti</span><span class="lang-en">Nissan / Infiniti Services</span></h3>
+            <ul class="check-list">
+              <li><span class="lang-es">Programación de smart key</span><span class="lang-en">Smart key programming</span></li>
+              <li><span class="lang-es">Reemplazo de llaves perdidas</span><span class="lang-en">Lost key replacement</span></li>
+              <li><span class="lang-es">Copias</span><span class="lang-en">Key copies</span></li>
+              <li><span class="lang-es">Diagnóstico push-to-start</span><span class="lang-en">Push-to-start diagnostic</span></li>
+              <li><span class="lang-es">Lockout</span><span class="lang-en">Lockout</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="case-card"><div class="loc">📍 Round Rock</div><p class="lang-es">Cliente pensó que la batería del carro estaba muerta.</p><p class="lang-en">Customer thought the car battery was dead.</p><p class="lang-es">Era la batería de la llave.</p><p class="lang-en">It was the key battery.</p><p class="result lang-es">✅ Le mostramos cómo acercarla al botón — arrancó al instante.</p><p class="result lang-en">✅ Showed them how to bring the key to the button — started instantly.</p></div>
+        <div class="case-card"><div class="loc">📍 <span class="lang-es">Gasolinera en Austin</span><span class="lang-en">Austin Gas Station</span></div><p class="lang-es">Cliente perdió la única llave.</p><p class="lang-en">Customer lost the only key.</p><p class="result lang-es">✅ Creamos y programamos una nueva en ~30 minutos.</p><p class="result lang-en">✅ Created and programmed a new one in ~30 minutes.</p></div>
+        <div class="case-card"><div class="loc">📍 South Austin</div><p class="lang-es">Push-to-start fallando a veces.</p><p class="lang-en">Push-to-start failing sometimes.</p><p class="lang-es">Problema de señal.</p><p class="lang-en">Signal problem.</p><p class="result lang-es">✅ Lo solucionamos en la misma visita.</p><p class="result lang-en">✅ Solved it in the same visit.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <h3 style="margin-bottom:16px;"><span class="lang-es">Por Qué el Diagnóstico Importa</span><span class="lang-en">Why Diagnosis Matters</span></h3>
+        <p style="font-size:16px;color:var(--text-light);max-width:600px;margin:0 auto;">
+          <span class="lang-es">Muchos creen que el problema es grave. Pero en realidad puede ser:</span>
+          <span class="lang-en">Many think the problem is serious. But in reality it can be:</span>
+        </p>
+        <div style="display:flex;justify-content:center;gap:20px;margin-top:16px;flex-wrap:wrap;">
+          <span style="background:var(--accent);color:white;padding:8px16px;border-radius:20px;font-size:14px;">
+            <span class="lang-es">Batería</span><span class="lang-en">Battery</span>
+          </span>
+          <span style="background:var(--accent);color:white;padding:8px16px;border-radius:20px;font-size:14px;">
+            <span class="lang-es">Llave</span><span class="lang-en">Key</span>
+          </span>
+          <span style="background:var(--accent);color:white;padding:8px16px;border-radius:20px;font-size:14px;">
+            <span class="lang-es">Señal</span><span class="lang-en">Signal</span>
+          </span>
+        </div>
+        <p style="font-size:16px;color:var(--primary);margin-top:16px;font-weight:600;">
+          <span class="lang-es">Diagnosticar bien = ahorrar dinero</span>
+          <span class="lang-en">Proper diagnosis = save money</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section" style="background:var(--bg2);">
+    <div class="container">
+      <div class="section-heading center text-center">
+        <h2><span class="lang-es">Preguntas Frecuentes</span><span class="lang-en">Frequently Asked Questions</span></h2>
+        <p style="color:var(--text-light);"><span class="lang-es">Respuestas sobre llaves Nissan e Infiniti</span><span class="lang-en">Answers about Nissan and Infiniti keys</span></p>
+      </div>
+      <div class="container" style="max-width:780px;">
+        <div class="faq-item faq-open">
+          <div class="faq-q">
+            <span class="lang-es">¿Por qué mi Nissan dice "Key not detected"?</span>
+            <span class="lang-en">Why does my Nissan say "Key not detected"?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-a">
+            <span class="lang-es">Generalmente batería o señal.</span>
+            <span class="lang-en">Generally battery or signal.</span>
+          </div>
+        </div>
+        <div class="faq-item faq-open">
+          <div class="faq-q">
+            <span class="lang-es">¿Puedo arrancar con batería muerta?</span>
+            <span class="lang-en">Can I start with dead battery?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-a">
+            <span class="lang-es">Sí — acercando la llave al botón.</span>
+            <span class="lang-en">Yes — bringing the key to the button.</span>
+          </div>
+        </div>
+        <div class="faq-item faq-open">
+          <div class="faq-q">
+            <span class="lang-es">¿Pueden hacer llave si perdí la única?</span>
+            <span class="lang-en">Can you make a key if I lost the only one?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-a">
+            <span class="lang-es">Sí.</span>
+            <span class="lang-en">Yes.</span>
+          </div>
+        </div>
+        <div class="faq-item faq-open">
+          <div class="faq-q">
+            <span class="lang-es">¿Cuánto tardan?</span>
+            <span class="lang-en">How long does it take?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-a">
+            <span class="lang-es">20–40 minutos normalmente.</span>
+            <span class="lang-en">20–40 minutes normally.</span>
+          </div>
+        </div>
+        <div class="faq-item faq-open">
+          <div class="faq-q">
+            <span class="lang-es">¿Qué pasa si lo ignoro?</span>
+            <span class="lang-en">What if I ignore it?</span>
+            <span class="faq-arrow">▾</span>
+          </div>
+          <div class="faq-a">
+            <span class="lang-es">Puede dejarte varado sin aviso.</span>
+            <span class="lang-en">Can leave you stranded without warning.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading center text-center">
+        <h2><span class="lang-es">Llamado Final</span><span class="lang-en">Final Call to Action</span></h2>
+        <p style="color:var(--text-light);"><span class="lang-es">Si tu Nissan o Infiniti no arranca o no detecta la llave — no esperes.</span><span class="lang-en">If your Nissan or Infiniti won't start or doesn't detect the key — don't wait.</span></p>
+        <p style="color:var(--text-light);"><span class="lang-es">Podemos ayudarte en el lugar, rápido.</span><span class="lang-en">We can help you on the spot, fast.</span></p>
+        <p style="color:var(--primary);font-size:18px;font-weight:600;margin-top:8px;">Austin Car Key & Ignition</p>
+        <p style="color:var(--text-light);"><span class="lang-es">Servicio móvil en Austin</span><span class="lang-en">Mobile service in Austin</span></p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3 style="margin-bottom:24px;"><span class="lang-es">¿Cómo Contactarnos?</span><span class="lang-en">How to Contact Us?</span></h3>
+          <div class="contact-method">
+            <div class="cm-icon">📞</div>
+            <div>
+              <div style="font-weight:700;font-size:16px;"><span class="lang-es">Llamar Ahora</span><span class="lang-en">Call Now</span></div>
+              <a href="tel:5127885155" style="color:var(--primary);font-size:20px;font-weight:700;">(512) 788-5155</a>
+              <p style="font-size:13px;color:var(--text-light);margin-top:2px;"><span class="lang-es">Servicio 24/7 para emergencias</span><span class="lang-en">24/7 service for emergencies</span></p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="cm-icon">📍</div>
+            <div>
+              <div style="font-weight:700;font-size:16px;"><span class="lang-es">Áreas de Servicio</span><span class="lang-en">Service Areas</span></div>
+              <p style="font-size:14px;color:var(--text-light);">Austin, North Austin, South Austin, Round Rock, Cedar Park</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="cm-icon">⏱️</div>
+            <div>
+              <div style="font-weight:700;font-size:16px;"><span class="lang-es">Tiempo de Llegada</span><span class="lang-en">Arrival Time</span></div>
+              <p style="font-size:14px;color:var(--text-light);"><span class="lang-es">20–40 minutos normalmente</span><span class="lang-en">20–40 minutes normally</span></p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="text-align:center;margin-top:32px;">
+        <a href="tel:5127885155" class="btn btn-accent" style="font-size:18px;padding:16px 36px;">
+          <span class="lang-es">📞 Llama ahora</span>
+          <span class="lang-en">📞 Call now</span>
+        </a>
+        <p style="margin-top:12px;font-size:16px;color:var(--text-light);">
+          (512) 788-5155
+        </p>
+      </div>
+          <div style="margin-top:20px;">
+            <div class="card">
+              <h3 style="margin-bottom:10px;font-size:16px;"><span class="lang-es">Servicios Especializados Nissan</span><span class="lang-en">Specialized Nissan Services</span></h3>
+              <div>
+                <span class="tag">Smart Key Programming</span>
+                <span class="tag">Key Replacement</span>
+                <span class="tag">Battery Replacement</span>
+                <span class="tag">Lockout Service</span>
+                <span class="tag">Push-to-Start Repair</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FLOATING PHONE -->
+<div class="float-phone">
+  <a href="tel:5127885155">📞 (512) 788-5155</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+          <img src="assets/images/logo.webp" alt="Austin Car Key & Ignition" style="height: 50px; width: auto; background: white; padding: 10px; border-radius: 10px;">
+        </div>
+        <p style="font-size:14px;line-height:1.7;"><span class="lang-es">Servicio móvil de llaves de carro y reparación de ignición en Austin, TX. Sin grúa. Sin concesionario.</span><span class="lang-en">Mobile car key service and ignition repair in Austin, TX. No tow truck. No dealership.</span></p>
+        <p style="margin-top:12px;font-size:14px;">📍 1803 W 35th St STE D, Austin, TX 78703</p>
+        <p style="margin-top:4px;font-size:14px;">📞 <a href="tel:5127885155">(512) 788-5155</a></p>
+      </div>
+      <div>
+        <h4><span class="lang-es">Servicios</span><span class="lang-en">Services</span></h4>
+        <ul style="list-style:none;line-height:2.2;">
+          <li><a href="honda.html" style="cursor:pointer;">Honda / Acura</a></li>
+          <li><a href="toyota.html" style="cursor:pointer;">Toyota / Lexus</a></li>
+          <li><a href="nissan.html" style="cursor:pointer;">Nissan / Infiniti</a></li>
+          <li><a href="ford.html" style="cursor:pointer;">Ford / Lincoln</a></li>
+          <li><a href="dodge.html" style="cursor:pointer;">Dodge / Chrysler / Jeep</a></li>
+          <li><a href="chevy.html" style="cursor:pointer;">Chevrolet / GMC</a></li>
+          <li><a href="hyundai.html" style="cursor:pointer;">Hyundai / Kia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-es">Navegación</span><span class="lang-en">Navigation</span></h4>
+        <ul style="list-style:none;line-height:2.4;">
+          <li><a href="index.html" style="cursor:pointer;"><span class="lang-es">Inicio</span><span class="lang-en">Home</span></a></li>
+          <li><a href="about.html" style="cursor:pointer;"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a></li>
+          <li><a href="contact.html" style="cursor:pointer;"><span class="lang-es">Contacto</span><span class="lang-en">Contact Us</span></a></li>
+          <li><a href="faq.html" style="cursor:pointer;">FAQ</a></li>
+          <li><a href="reviews.html" style="cursor:pointer;"><span class="lang-es">Reseñas</span><span class="lang-en">Reviews</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span class="lang-es">Áreas de Servicio</span><span class="lang-en">Service Areas</span></h4>
+        <ul style="list-style:none;line-height:2.2;font-size:14px;">
+          <li>📍 Austin</li>
+          <li>📍 North / South / East / West Austin</li>
+          <li>📍 Round Rock</li>
+          <li>📍 Cedar Park</li>
+          <li>📍 Pflugerville</li>
+          <li>📍 Georgetown</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Austin Car Key & Ignition. <span class="lang-es">Todos los derechos reservados.</span><span class="lang-en">All rights reserved.</span></span>
+      <a href="http://austincarkeyandignition.com/">austincarkeyandignition.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
